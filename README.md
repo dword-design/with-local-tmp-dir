@@ -3,7 +3,7 @@
 <!--/@-->
 
 <!--@pkg.description-->
-Creates a temporary folder inside CWD and passes the path to a function. Afterwards, the folder is removed. Especially useful for testing with real files.
+Creates a temporary folder inside CWD and passes the path to a function. Afterwards, the folder is removed. Especially useful for testing.
 <!--/@-->
 
 ## Installation
