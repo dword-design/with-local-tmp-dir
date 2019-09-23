@@ -7,7 +7,7 @@
 <!--/@-->
 
 <!--@pkg.description-->
-Output a tree of files and directories by providing an object. Especially useful for testing.
+Creates a temporary folder inside CWD and passes the path to a function. Afterwards, the folder is removed. Especially useful for testing with real files.
 <!--/@-->
 
 <!--@installation()-->
