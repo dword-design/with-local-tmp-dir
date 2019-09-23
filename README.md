@@ -3,7 +3,7 @@
 <!--/@-->
 
 <!--@shields('coveralls', 'npm', 'deps', 'devDeps')-->
-[![Coverage Status](https://img.shields.io/coveralls/dword-design/with-local-tmp-dir/master.svg)](https://coveralls.io/r/dword-design/with-local-tmp-dir?branch=master) [![npm version](https://img.shields.io/npm/v/with-local-tmp-dir.svg)](https://www.npmjs.com/package/with-local-tmp-dir) [![dependency status](https://img.shields.io/david/dword-design/with-local-tmp-dir/master.svg)](https://david-dm.org/dword-design/with-local-tmp-dir/master) [![devDependency status](https://img.shields.io/david/dev/dword-design/with-local-tmp-dir/master.svg)](https://david-dm.org/dword-design/with-local-tmp-dir/master#info=devDependencies)
+[![Coverage Status](https://img.shields.io/coveralls/dword-design/with-local-tmp-dir/master.svg)](https://coveralls.io/r/dword-design/with-local-tmp-dir?branch=master) [![npm version](https://img.shields.io/npm/v/with-local-tmp-dir.svg)](https://www.npmjs.com/package/with-local-tmp-dir) [![dependency status](https://img.shields.io/david/dword-design/with-local-tmp-dir/master.svg)](https://david-dm.org/dword-design/with-local-tmp-dir/master) [![devDependency status](https://img.shields.io/david/dev/dword-design/with-local-tmp-dir/master.svg)](https://david-dm.org/dword-design/with-local-tmp-dir/master#info=devDependencies)
 <!--/@-->
 
 <!--@pkg.description-->
