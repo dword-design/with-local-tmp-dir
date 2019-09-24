@@ -2,6 +2,8 @@
 # with-local-tmp-dir
 <!--/@-->
 
+[![Build Status](https://travis-ci.org/dword-design/with-local-tmp-dir.svg?branch=master)](https://travis-ci.org/dword-design/with-local-tmp-dir)
+
 <!--@pkg.description-->
 Creates a temporary folder inside CWD and passes the path to a function. Afterwards, the folder is removed. Especially useful for testing.
 <!--/@-->
