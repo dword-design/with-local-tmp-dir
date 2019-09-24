@@ -1,6 +1,6 @@
 {
   "name": "with-local-tmp-dir",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "main": "src/index.js",
   "repository": "git@github.com:dword-design/with-local-tmp-dir.git",
   "author": "Sebastian Landwehr <info@dword-design.de>",

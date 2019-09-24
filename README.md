@@ -3,6 +3,7 @@
 <!--/@-->
 
 <!--@shields('travis', 'coveralls')-->
+[![Build Status](https://img.shields.io/travis/dword-design/with-local-tmp-dir/master.svg)](https://travis-ci.org/dword-design/with-local-tmp-dir) [![Coverage Status](https://img.shields.io/coveralls/dword-design/with-local-tmp-dir/master.svg)](https://coveralls.io/r/dword-design/with-local-tmp-dir?branch=master)
 <!--/@-->
 
 <!--@pkg.description-->
