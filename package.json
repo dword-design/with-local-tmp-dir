@@ -1,6 +1,6 @@
 {
   "name": "with-local-tmp-dir",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "main": "src/index.js",
   "repository": "git@github.com:dword-design/with-local-tmp-dir.git",
   "author": "Sebastian Landwehr <info@dword-design.de>",
@@ -30,11 +30,17 @@
   "mos": {
     "installation": false
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
   "dependencies": {
     "tmp-promise": "^2.0.2"
   },
   "devDependencies": {
     "fs-extra": "^8.1.0",
+    "husky": "^3.0.5",
     "jest": "^24.9.0",
     "mos": "^1.3.1",
     "npm-run-all": "^4.1.5",

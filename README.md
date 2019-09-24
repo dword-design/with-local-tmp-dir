@@ -2,8 +2,8 @@
 # with-local-tmp-dir
 <!--/@-->
 
-[![Build Status](https://travis-ci.org/dword-design/with-local-tmp-dir.svg?branch=master)](https://travis-ci.org/dword-design/with-local-tmp-dir)
-[![Coverage Status](https://coveralls.io/repos/github/dword-design/with-local-tmp-dir/badge.svg?branch=master)](https://coveralls.io/github/dword-design/with-local-tmp-dir?branch=master)
+<!--@shields('travis', 'coveralls')-->
+<!--/@-->
 
 <!--@pkg.description-->
 Creates a temporary folder inside CWD and passes the path to a function. Afterwards, the folder is removed. Especially useful for testing.
