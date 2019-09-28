@@ -2,8 +2,8 @@
 # with-local-tmp-dir
 <!--/@-->
 
-<!--@shields('travis', 'coveralls')-->
-[![Build Status](https://img.shields.io/travis/dword-design/with-local-tmp-dir/master.svg)](https://travis-ci.org/dword-design/with-local-tmp-dir) [![Coverage Status](https://img.shields.io/coveralls/dword-design/with-local-tmp-dir/master.svg)](https://coveralls.io/r/dword-design/with-local-tmp-dir?branch=master)
+<!--@shields('npm', 'travis', 'coveralls', 'deps')-->
+[![npm version](https://img.shields.io/npm/v/with-local-tmp-dir.svg)](https://www.npmjs.com/package/with-local-tmp-dir) [![Build Status](https://img.shields.io/travis/dword-design/with-local-tmp-dir/master.svg)](https://travis-ci.org/dword-design/with-local-tmp-dir) [![Coverage Status](https://img.shields.io/coveralls/dword-design/with-local-tmp-dir/master.svg)](https://coveralls.io/r/dword-design/with-local-tmp-dir?branch=master) [![dependency status](https://img.shields.io/david/dword-design/with-local-tmp-dir.svg)](https://david-dm.org/dword-design/with-local-tmp-dir)
 <!--/@-->
 
 <!--@pkg.description-->

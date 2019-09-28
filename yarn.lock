@@ -370,54 +370,6 @@
     babel-run-async "^1.0.0"
     babel-runtime "^6.9.0"
 
-"@zkochan/hosted-git-info@^2.1.5":
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/@zkochan/hosted-git-info/-/hosted-git-info-2.1.5.tgz#555b091c956ba84932d88898fbefe0643c63a79f"
-  integrity sha1-VVsJHJVrqEky2IiY++/gZDxjp58=
-
-"@zkochan/normalize-package-data@^2.3.6":
-  version "2.3.6"
-  resolved "https://registry.yarnpkg.com/@zkochan/normalize-package-data/-/normalize-package-data-2.3.6.tgz#7f17e19e79e6526de673b77f38c82fae1ac75d69"
-  integrity sha1-fxfhnnnmUm3mc7d/OMgvrhrHXWk=
-  dependencies:
-    "@zkochan/hosted-git-info" "^2.1.5"
-    is-builtin-module "^1.0.0"
-    semver "2 || 3 || 4 || 5"
-    validate-npm-package-license "^3.0.1"
-
-"@zkochan/read-pkg-up@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@zkochan/read-pkg-up/-/read-pkg-up-1.0.2.tgz#9da30d2e0d69be9cb13e3fb2264022c0f687aa08"
-  integrity sha1-naMNLg1pvpyxPj+yJkAiwPaHqgg=
-  dependencies:
-    "@zkochan/read-pkg" "^1.1.2"
-    find-up "^1.0.0"
-
-"@zkochan/read-pkg@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@zkochan/read-pkg/-/read-pkg-1.1.2.tgz#ee8fd24c010966f166220f91a1aee1af7f7bb534"
-  integrity sha1-7o/STAEJZvFmIg+Roa7hr397tTQ=
-  dependencies:
-    "@zkochan/normalize-package-data" "^2.3.6"
-    load-json-file "^1.0.0"
-    path-type "^1.0.0"
-
-"@zkochan/tap-diff@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@zkochan/tap-diff/-/tap-diff-1.1.1.tgz#f7bad439edff29b98b0bff3446bbb8c5e7096c79"
-  integrity sha1-97rUOe3/KbmLC/80Rru4xecJbHk=
-  dependencies:
-    babel-runtime "^6.9.0"
-    chalk "^1.1.1"
-    core-js "^2.4.0"
-    diff "^2.2.2"
-    duplexer "^0.1.1"
-    figures "^1.4.0"
-    jsondiffpatch "^0.1.41"
-    pretty-ms "^2.1.0"
-    tap-parser "^1.2.2"
-    through2 "^2.0.0"
-
 abab@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/abab/-/abab-2.0.1.tgz#3fa17797032b71410ec372e11668f4b4ffc86a82"
@@ -1215,7 +1167,7 @@ code-point-at@^1.0.0:
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
-codemo@^0.2.0:
+codemo@^0.2.1:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/codemo/-/codemo-0.2.2.tgz#1827b4641f3bcf8bd71bd49b2d4e99b45b8b5fd7"
   integrity sha1-GCe0ZB87z4vXG9SbLU6ZtFuLX9c=
@@ -1347,6 +1299,14 @@ cross-spawn-async@2.2.2:
   dependencies:
     lru-cache "^4.0.0"
     which "^1.2.4"
+
+cross-spawn@^4.0.0:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-4.0.2.tgz#7b9247621c23adfdd3856004a823cbe397424d41"
+  integrity sha1-e5JHYhwjrf3ThWAEqCPL45dCTUE=
+  dependencies:
+    lru-cache "^4.0.1"
+    which "^1.2.9"
 
 cross-spawn@^6.0.0, cross-spawn@^6.0.5:
   version "6.0.5"
@@ -3223,7 +3183,7 @@ lowercase-keys@^1.0.0:
   resolved "https://registry.yarnpkg.com/lowercase-keys/-/lowercase-keys-1.0.1.tgz#6f9e30b47084d971a7c820ff15a6c5167b74c26f"
   integrity sha512-G2Lj61tXDnVFFOi8VZds+SoQjtQC3dgokKdDG2mTm1tx4m50NUHBOZSBwQQHyy0V12A0JTG4icfZQH+xPyh8VA==
 
-lru-cache@^4.0.0:
+lru-cache@^4.0.0, lru-cache@^4.0.1:
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-4.1.5.tgz#8bbe50ea85bed59bc9e33dcab8235ee9bcf443cd"
   integrity sha512-sWZlbEP2OsHNkXrMl5GYk/jKk70MBng6UU4YI/qGDYbgf6YbP4EvmqISbXCoJiRKs+1bSpFHVgQxvJ17F2li5g==
@@ -3406,15 +3366,17 @@ mkdirp@^0.5.0, mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
-mos-core@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/mos-core/-/mos-core-0.2.1.tgz#a156ab26851b01c8e421e8065617cf35f11f539a"
-  integrity sha1-oVarJoUbAcjkIegGVhfPNfEfU5o=
+mos-core@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/mos-core/-/mos-core-1.0.2.tgz#37c2697c1cc7861824162bd0fabaef2425f9e47d"
+  integrity sha1-N8JpfBzHhhgkFivQ+rrvJCX55H0=
   dependencies:
+    babel-run-async "^1.0.0"
     babel-runtime "^6.9.0"
     ccount "^1.0.0"
     collapse-white-space "^1.0.0"
     core-js "^2.4.0"
+    file-position "0.0.0"
     is-promise "^2.1.0"
     longest-streak "^1.0.0"
     markdown-table "^0.4.0"
@@ -3424,151 +3386,198 @@ mos-core@^0.2.1:
     trim "0.0.1"
     trim-trailing-lines "^1.0.0"
     unist-util-remove-position "^1.0.0"
-    vfile "^1.4.0"
-    vfile-location "^2.0.0"
 
-mos-init@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/mos-init/-/mos-init-1.1.0.tgz#9369785a509cd5e907b23318193c0ae3d257aa64"
-  integrity sha1-k2l4WlCc1ekHsjMYGTwK49JXqmQ=
+mos-hosted-git-info@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/mos-hosted-git-info/-/mos-hosted-git-info-1.0.0.tgz#ca3f01870044bf5e024f858f125dc59b1ac57b69"
+  integrity sha1-yj8BhwBEv14CT4WPEl3FmxrFe2k=
+
+mos-init@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/mos-init/-/mos-init-1.1.2.tgz#0eec4de241385234e4c0a154a9985cecd1fc4483"
+  integrity sha1-DuxN4kE4UjTkwKFUqZhc7NH8RIM=
   dependencies:
     arr-exclude "^1.0.0"
     core-js "^2.4.0"
+    cross-spawn "^4.0.0"
+    mos-read-pkg-up "^1.0.0"
     the-argv "^1.0.0"
     write-pkg "^1.0.0"
 
-mos-plugin-dependencies@2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/mos-plugin-dependencies/-/mos-plugin-dependencies-2.2.0.tgz#a4fc4eca96757a35807b0f2d4575052101df82dc"
-  integrity sha1-pPxOypZ1ejWAew8tRXUFIQHfgtw=
+mos-normalize-package-data@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/mos-normalize-package-data/-/mos-normalize-package-data-1.0.0.tgz#0fda084f3453f01ed4b5655341e6033f179a79ab"
+  integrity sha1-D9oITzRT8B7UtWVTQeYDPxeaeas=
+  dependencies:
+    is-builtin-module "^1.0.0"
+    mos-hosted-git-info "^1.0.0"
+    semver "2 || 3 || 4 || 5"
+    validate-npm-package-license "^3.0.1"
+
+mos-plugin-dependencies@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/mos-plugin-dependencies/-/mos-plugin-dependencies-2.2.2.tgz#be6edf375e4cf5c87c414d0f23766622d18ed177"
+  integrity sha1-vm7fN15M9ch8QU0PI3ZmItGO0Xc=
   dependencies:
     babel-runtime "^6.9.0"
     github-url-to-object "^2.2.1"
     shieldman "^1.1.0"
 
-mos-plugin-ejs@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/mos-plugin-ejs/-/mos-plugin-ejs-1.1.0.tgz#2bc43cd8b12231035ffdaa38408be2424b22cbe9"
-  integrity sha1-K8Q82LEiMQNf/ao4QIviQksiy+k=
+mos-plugin-ejs@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/mos-plugin-ejs/-/mos-plugin-ejs-1.1.2.tgz#d63657c4df68d32331d4c747c1eabfbc10b5cc16"
+  integrity sha1-1jZXxN9o0yMx1MdHweq/vBC1zBY=
   dependencies:
-    "@zkochan/read-pkg-up" "^1.0.2"
     babel-run-async "^1.0.0"
     babel-runtime "^6.9.0"
     github-url-to-object "^2.2.1"
+    mos-read-pkg-up "^1.0.0"
     reserved-words "^0.1.1"
 
-mos-plugin-example@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/mos-plugin-example/-/mos-plugin-example-1.1.0.tgz#7ba42fe7a50f2fcffa96712438dc7f71f0f46a71"
-  integrity sha1-e6Qv56UPL8/6lnEkONx/cfD0anE=
+mos-plugin-example@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/mos-plugin-example/-/mos-plugin-example-1.1.2.tgz#6261838eb4555cd9a38fbceb920133e794b88477"
+  integrity sha1-YmGDjrRVXNmjj7zrkgEz55S4hHc=
   dependencies:
     babel-runtime "^6.9.0"
-    codemo "^0.2.0"
+    codemo "^0.2.1"
     independent "^0.2.0"
 
-mos-plugin-installation@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/mos-plugin-installation/-/mos-plugin-installation-1.2.0.tgz#59a1c4ca227d227117782bdfdfe806ddb7f85e2c"
-  integrity sha1-WaHEyiJ9InEXeCvf3+gG3bf4Xiw=
+mos-plugin-installation@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/mos-plugin-installation/-/mos-plugin-installation-1.2.2.tgz#af6160841c87fb39869d0107c0659a2936b23c7f"
+  integrity sha1-r2FghByH+zmGnQEHwGWaKTayPH8=
   dependencies:
     babel-runtime "^6.9.0"
     markdownscript "^1.3.0"
     mdast-util-to-string "^1.0.1"
 
-mos-plugin-license@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/mos-plugin-license/-/mos-plugin-license-1.2.0.tgz#0f4e64a427e86c15cbb8383a9c10bdb275df2daa"
-  integrity sha1-D05kpCfobBXLuDg6nBC9snXfLao=
+mos-plugin-license@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/mos-plugin-license/-/mos-plugin-license-1.2.2.tgz#04457e197ba438778e3db67fadd8bcc984747c86"
+  integrity sha1-BEV+GXukOHeOPbZ/rdi8yYR0fIY=
   dependencies:
     babel-runtime "^6.9.0"
     file-exists "^1.0.0"
     markdownscript "^1.3.0"
     mdast-util-to-string "^1.0.1"
 
-mos-plugin-markdownscript@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/mos-plugin-markdownscript/-/mos-plugin-markdownscript-2.1.0.tgz#c147926993a214eaec1f08d9af7d4b91f201585c"
-  integrity sha1-wUeSaZOiFOrsHwjZr31LkfIBWFw=
+mos-plugin-markdownscript@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/mos-plugin-markdownscript/-/mos-plugin-markdownscript-2.1.2.tgz#5e1d3624207255778d45bb7e7a50dc7926c303b0"
+  integrity sha1-Xh02JCByVXeNRbt+elDceSbDA7A=
   dependencies:
     babel-runtime "^6.9.0"
     markdownscript "^1.3.0"
     reserved-words "^0.1.1"
 
-mos-plugin-package-json@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/mos-plugin-package-json/-/mos-plugin-package-json-2.1.0.tgz#d14cd250c63f04b05083922312f6453e8c885833"
-  integrity sha1-0UzSUMY/BLBQg5IjEvZFPoyIWDM=
+mos-plugin-package-json@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/mos-plugin-package-json/-/mos-plugin-package-json-2.1.2.tgz#9106684dd3160989815dded98bbaa3e8579d79a5"
+  integrity sha1-kQZoTdMWCYmBXd7Zi7qj6FedeaU=
   dependencies:
     babel-runtime "^6.9.0"
 
-mos-plugin-shields@2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/mos-plugin-shields/-/mos-plugin-shields-2.2.0.tgz#2f9e5a07bb5840ea6d19ad4d734da2c4a2d51b25"
-  integrity sha1-L55aB7tYQOptGa1Nc02ixKLVGyU=
+mos-plugin-shields@dword-design/mos#fork/mos-plugin-shields:
+  version "2.2.3"
+  resolved "https://codeload.github.com/dword-design/mos/tar.gz/e4af52ebd2d5e3cfe47c9187b2a820b74c1d6e03"
   dependencies:
     babel-runtime "^6.9.0"
-    shieldman "^1.0.0"
+    shieldman dword-design/shieldman#fork
 
-mos-plugin-snippet@2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/mos-plugin-snippet/-/mos-plugin-snippet-2.1.1.tgz#e2eae27995234405f3924ea20223200cf6bad0a6"
-  integrity sha1-4urieZUjRAXzkk6iAiMgDPa60KY=
+mos-plugin-snippet@^2.1.3:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/mos-plugin-snippet/-/mos-plugin-snippet-2.1.3.tgz#025743bf8896e865e2f7f448928cf44078d4c595"
+  integrity sha1-AldDv4iW6GXi9/RIkoz0QHjUxZU=
   dependencies:
     babel-runtime "^6.9.0"
 
-mos-plugin-toc@1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/mos-plugin-toc/-/mos-plugin-toc-1.2.1.tgz#b8fb346816e7a25a41abfeab045f3bbb3c86570a"
-  integrity sha1-uPs0aBbnolpBq/6rBF87uzyGVwo=
+mos-plugin-toc@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/mos-plugin-toc/-/mos-plugin-toc-1.2.3.tgz#803605b255acf62525ab597cf04ad26bdf5de30b"
+  integrity sha1-gDYFslWs9iUlq1l88ErSa99d4ws=
   dependencies:
     babel-runtime "^6.9.0"
     github-slugger "^1.1.1"
     markdownscript "^1.3.0"
 
-mos-processor@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/mos-processor/-/mos-processor-1.2.0.tgz#c223696fd6f5a20c1abb4ab40f84e82f44ad693d"
-  integrity sha1-wiNpb9b1ogwau0q0D4ToL0StaT0=
+mos-processor@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/mos-processor/-/mos-processor-1.2.2.tgz#6b224a95dbe6a6943beced5eb6c852dc89baa7db"
+  integrity sha1-ayJKldvmppQ77O1etshS3Im6p9s=
   dependencies:
-    "@zkochan/read-pkg-up" "^1.0.2"
     babel-runtime "^6.9.0"
     github-url-to-object "^2.2.1"
     magic-hook "^1.0.0"
-    mos-core "^0.2.1"
+    mos-core "^1.0.1"
+    mos-read-pkg-up "^1.0.0"
+    normalize-path "^2.0.1"
     remi "^1.1.1"
     remi-runner "^1.1.0"
-    vfile "^1.4.0"
 
-mos@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/mos/-/mos-1.3.1.tgz#15251f6462069287dcb650575d7a593c7be79188"
-  integrity sha1-FSUfZGIGkofctlBXXXpZPHvnkYg=
+mos-read-pkg-up@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/mos-read-pkg-up/-/mos-read-pkg-up-1.0.0.tgz#f008b85e542f7b8fd3fdb9d74edc8e7f4d182769"
+  integrity sha1-8Ai4XlQve4/T/bnXTtyOf00YJ2k=
   dependencies:
-    "@zkochan/read-pkg-up" "^1.0.2"
-    "@zkochan/tap-diff" "^1.1.1"
+    find-up "^1.0.0"
+    mos-read-pkg "^1.1.3"
+
+mos-read-pkg@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/mos-read-pkg/-/mos-read-pkg-1.1.3.tgz#14cdbc6a808f0fbc1b637866a1bed705a2bd11c4"
+  integrity sha1-FM28aoCPD7wbY3hmob7XBaK9EcQ=
+  dependencies:
+    load-json-file "^1.0.0"
+    mos-normalize-package-data "^1.0.0"
+    path-type "^1.0.0"
+
+mos-tap-diff@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/mos-tap-diff/-/mos-tap-diff-1.0.0.tgz#343381d1fd9ed51963b0b31535b7fd8bae04ff70"
+  integrity sha1-NDOB0f2e1RljsLMVNbf9i64E/3A=
+  dependencies:
+    babel-runtime "^6.9.0"
+    chalk "^1.1.1"
+    core-js "^2.4.0"
+    diff "^2.2.2"
+    duplexer "^0.1.1"
+    figures "^1.4.0"
+    jsondiffpatch "^0.1.41"
+    pretty-ms "^2.1.0"
+    tap-parser "^1.2.2"
+    through2 "^2.0.0"
+
+mos@dword-design/mos#fork/mos:
+  version "2.0.0-alpha.3"
+  resolved "https://codeload.github.com/dword-design/mos/tar.gz/20b78c35d0d241762238f1ed96691ba4a22209ed"
+  dependencies:
     babel-runtime "^6.9.0"
     chalk "~1.1.3"
     glob "~7.0.3"
     loud-rejection "^1.3.0"
     magic-hook "^1.0.0"
     meow "~3.7.0"
-    mos-init "1.1.0"
-    mos-plugin-dependencies "2.2.0"
-    mos-plugin-ejs "1.1.0"
-    mos-plugin-example "1.1.0"
-    mos-plugin-installation "1.2.0"
-    mos-plugin-license "1.2.0"
-    mos-plugin-markdownscript "2.1.0"
-    mos-plugin-package-json "2.1.0"
-    mos-plugin-shields "2.2.0"
-    mos-plugin-snippet "2.1.1"
-    mos-plugin-toc "1.2.1"
-    mos-processor "1.2.0"
+    mos-init "^1.1.2"
+    mos-plugin-dependencies "^2.2.2"
+    mos-plugin-ejs "^1.1.2"
+    mos-plugin-example "^1.1.2"
+    mos-plugin-installation "^1.2.2"
+    mos-plugin-license "^1.2.2"
+    mos-plugin-markdownscript "^2.1.2"
+    mos-plugin-package-json "^2.1.2"
+    mos-plugin-shields dword-design/mos#fork/mos-plugin-shields
+    mos-plugin-snippet "^2.1.3"
+    mos-plugin-toc "^1.2.3"
+    mos-processor "^1.2.2"
+    mos-read-pkg-up "^1.0.0"
+    mos-tap-diff "^1.0.0"
     normalize-newline "~2.0.0"
     normalize-path "~2.0.1"
     rcfile "^1.0.3"
     relative "~3.0.2"
-    resolve "~1.1.7"
+    resolve-cwd "^1.0.0"
+    resolve-from "^2.0.0"
     tape "~4.5.1"
     update-notifier "^0.7.0"
 
@@ -3703,7 +3712,7 @@ normalize-path@2.0.1, normalize-path@~2.0.1:
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-2.0.1.tgz#47886ac1662760d4261b7d979d241709d3ce3f7a"
   integrity sha1-R4hqwWYnYNQmG32XnSQXCdPOP3o=
 
-normalize-path@^2.1.1:
+normalize-path@^2.0.1, normalize-path@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-2.1.1.tgz#1ab28b556e198363a8c1a6f7e6fa20137fe6aed9"
   integrity sha1-GrKLVW4Zg2Oowab35vogE3/mrtk=
@@ -4491,6 +4500,13 @@ reserved-words@^0.1.1:
   resolved "https://registry.yarnpkg.com/reserved-words/-/reserved-words-0.1.2.tgz#00a0940f98cd501aeaaac316411d9adc52b31ab1"
   integrity sha1-AKCUD5jNUBrqqsMWQR2a3FKzGrE=
 
+resolve-cwd@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/resolve-cwd/-/resolve-cwd-1.0.0.tgz#4eaeea41ed040d1702457df64a42b2b07d246f9f"
+  integrity sha1-Tq7qQe0EDRcCRX32SkKysH0kb58=
+  dependencies:
+    resolve-from "^2.0.0"
+
 resolve-cwd@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/resolve-cwd/-/resolve-cwd-2.0.0.tgz#00a9f7387556e27038eae232caa372a6a59b665a"
@@ -4502,6 +4518,11 @@ resolve-from@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-1.0.1.tgz#26cbfe935d1aeeeabb29bc3fe5aeb01e93d44226"
   integrity sha1-Jsv+k10a7uq7Kbw/5a6wHpPUQiY=
+
+resolve-from@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-2.0.0.tgz#9480ab20e94ffa1d9e80a804c7ea147611966b57"
+  integrity sha1-lICrIOlP+h2egKgEx+oUdhGWa1c=
 
 resolve-from@^3.0.0:
   version "3.0.0"
@@ -4717,10 +4738,14 @@ shellwords@^0.1.1:
   resolved "https://registry.yarnpkg.com/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
   integrity sha512-vFwSUfQvqybiICwZY5+DAWIPLKsWO31Q91JSKl3UYv+K5c2QRPzn0qzec6QPu1Qc9eHYItiP3NdJqNVqetYAww==
 
-shieldman@^1.0.0, shieldman@^1.1.0:
+shieldman@^1.1.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/shieldman/-/shieldman-1.4.0.tgz#ef325beab7c34b48ba6bab4f8b2b674f74166c73"
   integrity sha512-wnaqLmbwHOkG72+CpKfuBQMth2yEYpn0X0/wwuaGovycRIFPuT00BD0PwOeMRv44LOwEJpNTfG4vbDtT2Ap+tg==
+
+shieldman@dword-design/shieldman#fork:
+  version "0.0.0-placeholder"
+  resolved "https://codeload.github.com/dword-design/shieldman/tar.gz/46a015e122bb459e0bdb0374b06322622e0bf9f5"
 
 signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
@@ -5467,16 +5492,6 @@ verror@1.10.0:
     assert-plus "^1.0.0"
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
-
-vfile-location@^2.0.0:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/vfile-location/-/vfile-location-2.0.5.tgz#c83eb02f8040228a8d2b3f10e485be3e3433e0a2"
-  integrity sha512-Pa1ey0OzYBkLPxPZI3d9E+S4BmvfVwNAAXrrqGbwTVXWaX2p9kM1zZ+n35UtVM06shmWKH4RPRN8KI80qE3wNQ==
-
-vfile@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/vfile/-/vfile-1.4.0.tgz#c0fd6fa484f8debdb771f68c31ed75d88da97fe7"
-  integrity sha1-wP1vpIT43r23cfaMMe112I2pf+c=
 
 w3c-hr-time@^1.0.1:
   version "1.0.1"
