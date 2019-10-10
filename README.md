@@ -25,18 +25,22 @@ yarn add --dev with-local-tmp-dir
 ```js
 const withLocalTmpDir = require('with-local-tmp-dir')
 
-await withLocalTmpDir(path => {
-  console.log(path)
+await withLocalTmpDir(() => {
+  console.log(process.cwd())
   //> /Users/max/project/tmp-18815DudQxmdn03Rz
 })
 // Now the folder does not exist anymore
 
 // Also works with async functions =)
-await withLocalTmpDir(async path => await ...)
+await withLocalTmpDir(async () => await ...)
 
 // The folder is removed even if an exception is thrown
-await withLocalTmpDir(async path => throw new Error('File could not be found'))
+await withLocalTmpDir(async () => throw new Error('File could not be found'))
 ```
+
+## Migrating from Version 1.x to 2.x
+
+Version 2 automatically changes the current working directory into the temporary folder. That's why the `path` parameter is not needed anymore and the path can be directly queried from `process.cwd`.
 
 <!--@license()-->
 ## License

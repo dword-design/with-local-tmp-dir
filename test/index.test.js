@@ -4,38 +4,68 @@ const { exists, outputFile } = require('fs-extra')
 
 test('is temporary directory', async () => {
   let folderName
-  await withLocalTmpDir(path => folderName = basename(path))
+  await withLocalTmpDir(() => folderName = basename(process.cwd()))
   expect(folderName.startsWith('tmp-')).toBeTruthy()
 })
 
 test('is subdirectory of cwd', async () => {
   let path
-  await withLocalTmpDir(_path => path = _path)
+  await withLocalTmpDir(() => path = process.cwd())
   expect(process.cwd()).toEqual(dirname(path))
+})
+
+test('cwd is reset', async () => {
+  const cwd = process.cwd()
+  await withLocalTmpDir(() => {})
+  expect(process.cwd()).toEqual(cwd)
 })
 
 test('temporary directory is removed afterwards', async () => {
   let path
-  await withLocalTmpDir(_path => path = _path)
+  await withLocalTmpDir(() => path = process.cwd())
   expect(path).toBeDefined()
   expect(await exists(path)).toBeFalsy()
 })
 
 test('temporary directory is removed even if not empty', async () => {
   let path
-  await withLocalTmpDir(async _path => {
-    path = _path
-    await outputFile(join(path, 'foo.txt'), 'foo')
+  let innerFileExists = false
+  await withLocalTmpDir(async () => {
+    path = process.cwd()
+    await outputFile('foo.txt', 'foo')
+    innerFileExists = await exists('foo.txt')
   })
+  expect(innerFileExists).toBeTruthy()
   expect(await exists(path)).toBeFalsy()
 })
 
 test('temporary directory is removed if error occurs', async () => {
   let path
-  await expect(withLocalTmpDir(async _path => {
-    path = _path
+  await expect(withLocalTmpDir(async () => {
+    path = process.cwd()
     throw new Error()
   })).rejects.toThrow()
   expect(path).toBeDefined()
   expect(await exists(path)).toBeFalsy()
+})
+
+test('cwd is reset if error occurs', async () => {
+  const cwd = process.cwd()
+  await expect(withLocalTmpDir(async () => {
+    throw new Error()
+  })).rejects.toThrow()
+  expect(process.cwd()).toEqual(cwd)
+})
+
+test('async function', async () => {
+  let path1
+  let path2
+  await withLocalTmpDir(async () => {
+    path1 = process.cwd()
+    await new Promise(resolve => setTimeout(resolve, 500))
+    path2 = process.cwd()
+  })
+  expect(path1).toEqual(path2)
+  expect(basename(path1).startsWith('tmp-')).toBeTruthy()
+  expect(basename(path2).startsWith('tmp-')).toBeTruthy()
 })

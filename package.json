@@ -1,6 +1,6 @@
 {
   "name": "with-local-tmp-dir",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "src/index.js",
   "repository": "https://github.com/dword-design/with-local-tmp-dir",
   "author": "Sebastian Landwehr <info@dword-design.de>",
@@ -21,8 +21,8 @@
     "with"
   ],
   "scripts": {
-    "prepublishOnly:readme": "mos",
-    "prepublishOnly": "npm-run-all prepublishOnly:*",
+    "prepare:readme": "mos",
+    "prepare": "npm-run-all prepare:*",
     "test:readme": "mos test",
     "test:system": "jest --coverage && mos",
     "test": "npm-run-all test:*"
