@@ -1,7 +1,6 @@
-const withLocalTmpDir = require('with-local-tmp-dir')
-const { basename, join, dirname } = require('path')
-const { exists, outputFile } = require('fs-extra')
-const expect = require('expect')
+import withLocalTmpDir from 'with-local-tmp-dir'
+import { basename, dirname } from 'path'
+import { exists, outputFile } from 'fs-extra'
 
 it('is temporary directory', async () => {
   let folderName

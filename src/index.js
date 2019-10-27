@@ -1,6 +1,6 @@
-const tmp = require('tmp-promise')
+import tmp from 'tmp-promise'
 
-module.exports = async callback => tmp.withDir(
+export default async callback => tmp.withDir(
   async ({ path }) => {
     const previousCwd = process.cwd()
     process.chdir(path)
