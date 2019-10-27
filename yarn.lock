@@ -3897,7 +3897,7 @@ mos-tap-diff@^1.0.0:
 
 mos@dword-design/mos#fork/mos:
   version "2.0.0-alpha.3"
-  resolved "https://codeload.github.com/dword-design/mos/tar.gz/20b78c35d0d241762238f1ed96691ba4a22209ed"
+  resolved "https://codeload.github.com/dword-design/mos/tar.gz/b858d276993f0c95070bc1c9e847524cdf7ba72e"
   dependencies:
     babel-runtime "^6.9.0"
     chalk "~1.1.3"
