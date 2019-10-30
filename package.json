@@ -1,6 +1,6 @@
 {
   "name": "with-local-tmp-dir",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "main": "dist/index.js",
   "files": [
     "dist"
