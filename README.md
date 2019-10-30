@@ -10,15 +10,17 @@
 Creates a temporary folder inside CWD and passes the path to a function. Afterwards, the folder is removed. Especially useful for testing.
 <!--/@-->
 
+<!--@installation()-->
 ## Installation
 
 ```sh
 # via NPM
-npm install --save-dev with-local-tmp-dir
+npm install --save with-local-tmp-dir
 
 # via Yarn
-yarn add --dev with-local-tmp-dir
+yarn add with-local-tmp-dir
 ```
+<!--/@-->
 
 ## Usage
 
