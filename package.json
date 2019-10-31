@@ -1,6 +1,6 @@
 {
   "name": "with-local-tmp-dir",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "main": "dist/index.js",
   "files": [
     "dist"
@@ -24,13 +24,13 @@
     "with"
   ],
   "scripts": {
-    "prepare": "base",
-    "test": "base test"
+    "prepare": "base-node prepare",
+    "test": "base-node test"
   },
   "dependencies": {
     "tmp-promise": "^2.0.2"
   },
   "devDependencies": {
-    "@dword-design/base-node": "^0.3.0"
+    "@dword-design/base-node": "^0.4.1"
   }
 }
