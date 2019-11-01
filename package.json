@@ -1,6 +1,6 @@
 {
   "name": "with-local-tmp-dir",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "main": "src/index.js",
   "files": [
     "src"
@@ -25,8 +25,8 @@
   ],
   "scripts": {
     "prepare": "dw-config-files && mos",
-    "pretest": "install-self",
-    "test": "nyc --reporter lcov --reporter text mocha && mos test"
+    "pretest": "npm run prepare && install-self",
+    "test": "nyc --reporter lcov --reporter text mocha-per-file && mos test"
   },
   "husky": {
     "hooks": {
@@ -43,7 +43,7 @@
     "fs-extra": "^8.1.0",
     "husky": "^3.0.9",
     "install-self": "dword-design/install-self#fork",
-    "mocha": "^6.2.2",
+    "mocha-per-file": "^1.1.3",
     "mos": "dword-design/mos#fork/mos",
     "nyc": "^14.1.1"
   }
