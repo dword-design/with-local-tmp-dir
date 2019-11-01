@@ -1,9 +1,9 @@
 {
   "name": "with-local-tmp-dir",
-  "version": "2.0.7",
-  "main": "dist/index.js",
+  "version": "2.0.8",
+  "main": "src/index.js",
   "files": [
-    "dist"
+    "src"
   ],
   "repository": "https://github.com/dword-design/with-local-tmp-dir",
   "author": "Sebastian Landwehr <info@dword-design.de>",
@@ -24,13 +24,26 @@
     "with"
   ],
   "scripts": {
-    "prepare": "base-node prepare",
-    "test": "base-node test"
+    "prepare": "dw-config-files && mos",
+    "pretest": "install-self",
+    "test": "nyc --reporter lcov --reporter text mocha && mos test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
   },
   "dependencies": {
     "tmp-promise": "^2.0.2"
   },
   "devDependencies": {
-    "@dword-design/base-node": "^0.4.1"
+    "@dword-design/config-files": "^1.1.1",
+    "expect": "^24.9.0",
+    "fs-extra": "^8.1.0",
+    "husky": "^3.0.9",
+    "install-self": "dword-design/install-self#fork",
+    "mocha": "^6.2.2",
+    "mos": "dword-design/mos#fork/mos",
+    "nyc": "^14.1.1"
   }
 }

@@ -40,10 +40,6 @@ await withLocalTmpDir(async () => await ...)
 await withLocalTmpDir(async () => throw new Error('File could not be found'))
 ```
 
-## Migrating from Version 1.x to 2.x
-
-Version 2 automatically changes the current working directory into the temporary folder. That's why the `path` parameter is not needed anymore and the path can be directly queried from `process.cwd`.
-
 <!--@license()-->
 ## License
 

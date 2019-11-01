@@ -1,19 +1,23 @@
-import withLocalTmpDir from 'with-local-tmp-dir'
-import { basename, dirname } from 'path'
-import { exists, outputFile } from 'fs'
+const withLocalTmpDir = require('with-local-tmp-dir')
+const { basename, dirname } = require('path')
+const { exists, outputFile } = require('fs-extra')
+const expect = require('expect')
 
 describe('index', () => {
 
-  it('is temporary directory', async () => {
-    let folderName
-    await withLocalTmpDir(() => folderName = basename(process.cwd()))
-    expect(folderName.startsWith('tmp-')).toBeTruthy()
+  it('is temporary directory', done => {
+    withLocalTmpDir(() => {
+      expect(basename(process.cwd()).startsWith('tmp-')).toBeTruthy()
+      done()
+    })
   })
 
-  it('is subdirectory of cwd', async () => {
-    let path
-    await withLocalTmpDir(() => path = process.cwd())
-    expect(process.cwd()).toEqual(dirname(path))
+  it('is subdirectory of cwd', done => {
+    const cwd = process.cwd()
+    withLocalTmpDir(() => {
+      expect(dirname(process.cwd())).toEqual(cwd)
+      done()
+    })
   })
 
   it('cwd is reset', async () => {
@@ -59,16 +63,15 @@ describe('index', () => {
     expect(process.cwd()).toEqual(cwd)
   })
 
-  it('async function', async () => {
-    let path1
-    let path2
-    await withLocalTmpDir(async () => {
+  it('async function', done => {
+    withLocalTmpDir(async () => {
       path1 = process.cwd()
       await new Promise(resolve => setTimeout(resolve, 500))
       path2 = process.cwd()
+      expect(path1).toEqual(path2)
+      expect(basename(path1).startsWith('tmp-')).toBeTruthy()
+      expect(basename(path2).startsWith('tmp-')).toBeTruthy()
+      done()
     })
-    expect(path1).toEqual(path2)
-    expect(basename(path1).startsWith('tmp-')).toBeTruthy()
-    expect(basename(path2).startsWith('tmp-')).toBeTruthy()
   })
 })
