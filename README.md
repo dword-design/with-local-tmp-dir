@@ -38,6 +38,9 @@ await withLocalTmpDir(async () => await ...)
 
 // The folder is removed even if an exception is thrown
 await withLocalTmpDir(async () => throw new Error('File could not be found'))
+
+// Create the temporary folder in a specific path
+await withLocalTmpDir('my-subpath', () => console.log(process.cwd()))
 ```
 
 <!--@license()-->

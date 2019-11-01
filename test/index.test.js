@@ -1,39 +1,24 @@
 const withLocalTmpDir = require('with-local-tmp-dir')
-const { basename, dirname } = require('path')
-const { exists, outputFile } = require('fs-extra')
+const { basename, dirname, join } = require('path')
+const { exists, outputFile, ensureDir } = require('fs-extra')
 const expect = require('expect')
 
 describe('index', () => {
 
-  it('is temporary directory', done => {
-    withLocalTmpDir(() => {
-      expect(basename(process.cwd()).startsWith('tmp-')).toBeTruthy()
-      done()
-    })
-  })
-
-  it('is subdirectory of cwd', done => {
+  it('simple', async () => {
     const cwd = process.cwd()
-    withLocalTmpDir(() => {
-      expect(dirname(process.cwd())).toEqual(cwd)
-      done()
-    })
-  })
-
-  it('cwd is reset', async () => {
-    const cwd = process.cwd()
-    await withLocalTmpDir(() => {})
-    expect(process.cwd()).toEqual(cwd)
-  })
-
-  it('temporary directory is removed afterwards', async () => {
     let path
-    await withLocalTmpDir(() => path = process.cwd())
+    await withLocalTmpDir(() => {
+      expect(basename(process.cwd()).startsWith('tmp-')).toBeTruthy()
+      expect(dirname(process.cwd())).toEqual(cwd)
+      path = process.cwd()
+    })
+    expect(process.cwd()).toEqual(cwd)
     expect(path).toBeDefined()
     expect(await exists(path)).toBeFalsy()
   })
 
-  it('temporary directory is removed even if not empty', async () => {
+  it('non-empty', async () => {
     let path
     let innerFileExists = false
     await withLocalTmpDir(async () => {
@@ -45,7 +30,8 @@ describe('index', () => {
     expect(await exists(path)).toBeFalsy()
   })
 
-  it('temporary directory is removed if error occurs', async () => {
+  it('error', async () => {
+    const cwd = process.cwd()
     let path
     await expect(withLocalTmpDir(async () => {
       path = process.cwd()
@@ -53,13 +39,6 @@ describe('index', () => {
     })).rejects.toThrow()
     expect(path).toBeDefined()
     expect(await exists(path)).toBeFalsy()
-  })
-
-  it('cwd is reset if error occurs', async () => {
-    const cwd = process.cwd()
-    await expect(withLocalTmpDir(async () => {
-      throw new Error()
-    })).rejects.toThrow()
     expect(process.cwd()).toEqual(cwd)
   })
 
@@ -73,5 +52,15 @@ describe('index', () => {
       expect(basename(path2).startsWith('tmp-')).toBeTruthy()
       done()
     })
+  })
+
+  it('path', done => {
+    const cwd = process.cwd()
+    ensureDir('foo')
+      .then(() => withLocalTmpDir('foo', () => {
+        expect(basename(process.cwd()).startsWith('tmp-')).toBeTruthy()
+        expect(dirname(process.cwd())).toEqual(join(cwd, 'foo'))
+        done()
+      }))
   })
 })
