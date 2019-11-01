@@ -1,6 +1,6 @@
 {
   "name": "with-local-tmp-dir",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "main": "src/index.js",
   "files": [
     "src"
@@ -34,6 +34,7 @@
     }
   },
   "dependencies": {
+    "chdir": "dword-design/node-chdir#fork",
     "tmp-promise": "^2.0.2"
   },
   "devDependencies": {

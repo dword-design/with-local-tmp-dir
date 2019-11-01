@@ -1,6 +1,6 @@
 const withLocalTmpDir = require('with-local-tmp-dir')
 const { basename, dirname, join } = require('path')
-const { exists, outputFile, ensureDir } = require('fs-extra')
+const { exists, outputFile, ensureDir, remove } = require('fs-extra')
 const expect = require('expect')
 
 describe('index', () => {
@@ -62,5 +62,7 @@ describe('index', () => {
         expect(dirname(process.cwd())).toEqual(join(cwd, 'foo'))
         done()
       }))
+      .then(() => remove('foo'))
+      .then(done)
   })
 })
