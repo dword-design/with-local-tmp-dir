@@ -41,6 +41,9 @@ await withLocalTmpDir(async () => throw new Error('File could not be found'))
 
 // Create the temporary folder in a specific path
 await withLocalTmpDir('my-subpath', () => console.log(process.cwd()))
+
+// Keep folder if not empty
+await withLocalTmpDir('my-subpath', () => console.log(process.cwd()), { unsafeCleanup: false })
 ```
 
 <!--@license()-->
