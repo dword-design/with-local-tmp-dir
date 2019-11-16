@@ -1,6 +1,6 @@
 {
   "name": "with-local-tmp-dir",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "main": "src/index.js",
   "files": [
     "src"
