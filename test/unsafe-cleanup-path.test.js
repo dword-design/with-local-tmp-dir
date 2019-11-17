@@ -1,9 +1,9 @@
-const withLocalTmpDir = require('with-local-tmp-dir')
-const { basename, dirname, join } = require('path')
-const { exists, outputFile, ensureDir, remove } = require('fs-extra')
-const expect = require('expect')
+import withLocalTmpDir from 'with-local-tmp-dir'
+import { dirname } from 'path'
+import { exists, outputFile, remove } from 'fs'
+import expect from 'expect'
 
-module.exports = async () => {
+export default async () => {
   let path
   await expect(withLocalTmpDir('test', async () => {
     await outputFile('test.txt', '')

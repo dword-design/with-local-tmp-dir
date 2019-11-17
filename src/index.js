@@ -1,7 +1,7 @@
-const tmp = require('tmp-promise')
-const chdir = require('chdir')
+import tmp from 'tmp-promise'
+import chdir from 'chdir'
 
-module.exports = async (...args) => {
+export default (...args) => {
   args = typeof args[0] === 'string' ? args : [process.cwd(), ...args]
   const path = args[0]
   const callback = args[1]
