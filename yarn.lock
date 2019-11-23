@@ -747,7 +747,7 @@
     babel-plugin-module-resolver "^3.2.0"
     babel-plugin-transform-imports "^2.0.0"
 
-"@dword-design/base-node@^0.4.4":
+"@dword-design/base-node@0.4.4":
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/@dword-design/base-node/-/base-node-0.4.4.tgz#97644f7b3316ffcdbfbc8cbcb1f207ecdda43efd"
   integrity sha512-ngWTk6I45a95dS+ttRabJ6AetWAj5VVxO4J02UOP+gBFqWq5W2eNaodx7T9XPZJ+A/eTH7o/Rp3iyH7MRE2iTw==
@@ -2325,7 +2325,7 @@ expand-brackets@^2.1.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-expect@^24.9.0:
+expect@24.9.0, expect@^24.9.0:
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/expect/-/expect-24.9.0.tgz#b75165b4817074fa4a157794f46fe9f1ba15b6ca"
   integrity sha512-wvVAx8XIol3Z5m9zvZXiyZOQ+sRJqNTIm6sGjdWlaZIeupQGO3WbYI+15D/AmEwZywL6wtJkbAbJtzkOfBuR0Q==

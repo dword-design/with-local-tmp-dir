@@ -32,7 +32,7 @@
     "tmp-promise": "^2.0.2"
   },
   "devDependencies": {
-    "@dword-design/base-node": "^0.4.4",
-    "expect": "^24.9.0"
+    "@dword-design/base-node": "0.4.4",
+    "expect": "24.9.0"
   }
 }
