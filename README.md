@@ -1,26 +1,40 @@
-<!--@h1([pkg.name])-->
-# with-local-tmp-dir
-<!--/@-->
+<!-- TITLE/ -->
 
-<!--@shields('npm', 'travis', 'coveralls', 'deps')-->
-[![npm version](https://img.shields.io/npm/v/with-local-tmp-dir.svg)](https://www.npmjs.com/package/with-local-tmp-dir) [![Build Status](https://img.shields.io/travis/dword-design/with-local-tmp-dir/master.svg)](https://travis-ci.org/dword-design/with-local-tmp-dir) [![Coverage Status](https://img.shields.io/coveralls/dword-design/with-local-tmp-dir/master.svg)](https://coveralls.io/r/dword-design/with-local-tmp-dir?branch=master) [![dependency status](https://img.shields.io/david/dword-design/with-local-tmp-dir.svg)](https://david-dm.org/dword-design/with-local-tmp-dir)
-<!--/@-->
+<h1>with-local-tmp-dir</h1>
 
-<!--@pkg.description-->
+<!-- /TITLE -->
+
+
+<!-- BADGES/ -->
+
+<span class="badge-npmversion"><a href="https://npmjs.org/package/with-local-tmp-dir" title="View this project on NPM"><img src="https://img.shields.io/npm/v/with-local-tmp-dir.svg" alt="NPM version" /></a></span>
+<span class="badge-travisci"><a href="http://travis-ci.org/dword-design/with-local-tmp-dir" title="Check this project's build status on TravisCI"><img src="https://img.shields.io/travis/dword-design/with-local-tmp-dir/master.svg" alt="Travis CI Build Status" /></a></span>
+<span class="badge-coveralls"><a href="https://coveralls.io/r/dword-design/with-local-tmp-dir" title="View this project's coverage on Coveralls"><img src="https://img.shields.io/coveralls/dword-design/with-local-tmp-dir.svg" alt="Coveralls Coverage Status" /></a></span>
+<span class="badge-daviddm"><a href="https://david-dm.org/dword-design/with-local-tmp-dir" title="View the status of this project's dependencies on DavidDM"><img src="https://img.shields.io/david/dword-design/with-local-tmp-dir.svg" alt="Dependency Status" /></a></span>
+<span class="badge-shields"><a href="https://img.shields.io/badge/renovate-enabled-brightgreen.svg"><img src="https://img.shields.io/badge/renovate-enabled-brightgreen.svg" /></a></span>
+
+<!-- /BADGES -->
+
+
+<!-- DESCRIPTION/ -->
+
 Creates a temporary folder inside CWD and passes the path to a function. Afterwards, the folder is removed. Especially useful for testing.
-<!--/@-->
 
-<!--@installation()-->
-## Installation
+<!-- /DESCRIPTION -->
 
-```sh
-# via NPM
-npm install --save with-local-tmp-dir
 
-# via Yarn
-yarn add with-local-tmp-dir
-```
-<!--/@-->
+<!-- INSTALL/ -->
+
+<h2>Install</h2>
+
+<a href="https://npmjs.com" title="npm is a package manager for javascript"><h3>npm</h3></a>
+<ul>
+<li>Install: <code>npm install --save with-local-tmp-dir</code></li>
+<li>Require: <code>require('with-local-tmp-dir')</code></li>
+</ul>
+
+<!-- /INSTALL -->
+
 
 ## Usage
 
@@ -46,8 +60,16 @@ await withLocalTmpDir('my-subpath', () => console.log(process.cwd()))
 await withLocalTmpDir('my-subpath', () => console.log(process.cwd()), { unsafeCleanup: false })
 ```
 
-<!--@license()-->
-## License
+<!-- LICENSE/ -->
 
-MIT © Sebastian Landwehr
-<!--/@-->
+<h2>License</h2>
+
+Unless stated otherwise all works are:
+
+<ul><li>Copyright &copy; Sebastian Landwehr</li></ul>
+
+and licensed under:
+
+<ul><li><a href="http://spdx.org/licenses/MIT.html">MIT License</a></li></ul>
+
+<!-- /LICENSE -->
