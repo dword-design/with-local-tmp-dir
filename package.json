@@ -1,11 +1,11 @@
 {
   "name": "with-local-tmp-dir",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "main": "dist/index.js",
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/dword-design/with-local-tmp-dir",
+  "repository": "dword-design/with-local-tmp-dir",
   "author": "Sebastian Landwehr <info@dword-design.de>",
   "license": "MIT",
   "description": "Creates a temporary folder inside CWD and passes the path to a function. Afterwards, the folder is removed. Especially useful for testing.",
@@ -34,5 +34,13 @@
   "devDependencies": {
     "@dword-design/base-node": "^1.0.0",
     "expect": "^24.9.0"
+  },
+  "maintainers": [],
+  "contributors": [
+    "Renovate Bot (http://renovatebot.com)",
+    "dword-design (http://www.dword-design.de)"
+  ],
+  "bugs": {
+    "url": "https://github.com/dword-design/with-local-tmp-dir/issues"
   }
 }
