@@ -1,30 +1,38 @@
 {
   "name": "with-local-tmp-dir",
   "version": "2.2.2",
-  "main": "dist/index.js",
+  "description": "Creates a temporary folder inside CWD and passes the path to a function. Afterwards, the folder is removed. Especially useful for testing.",
+  "keywords": [
+    "cleanup",
+    "cwd",
+    "directory",
+    "function",
+    "local",
+    "path",
+    "remove",
+    "temp",
+    "temporary",
+    "test",
+    "tmp",
+    "with"
+  ],
+  "bugs": {
+    "url": "https://github.com/dword-design/with-local-tmp-dir/issues"
+  },
+  "repository": "dword-design/with-local-tmp-dir",
+  "license": "MIT",
+  "author": "Sebastian Landwehr <info@dword-design.de>",
+  "contributors": [
+    "Renovate Bot (http://renovatebot.com)",
+    "dword-design (http://www.dword-design.de)"
+  ],
   "files": [
     "dist"
   ],
-  "repository": "dword-design/with-local-tmp-dir",
-  "author": "Sebastian Landwehr <info@dword-design.de>",
-  "license": "MIT",
-  "description": "Creates a temporary folder inside CWD and passes the path to a function. Afterwards, the folder is removed. Especially useful for testing.",
-  "keywords": [
-    "test",
-    "temp",
-    "tmp",
-    "temporary",
-    "directory",
-    "path",
-    "cwd",
-    "local",
-    "remove",
-    "cleanup",
-    "function",
-    "with"
-  ],
+  "main": "dist/index.js",
   "scripts": {
-    "prepare": "base-node prepare",
+    "prepublishOnly": "base-node build",
+    "start": "base start",
     "test": "base-node test"
   },
   "dependencies": {
@@ -35,12 +43,5 @@
     "@dword-design/base-node": "^1.0.0",
     "expect": "^24.9.0"
   },
-  "maintainers": [],
-  "contributors": [
-    "Renovate Bot (http://renovatebot.com)",
-    "dword-design (http://www.dword-design.de)"
-  ],
-  "bugs": {
-    "url": "https://github.com/dword-design/with-local-tmp-dir/issues"
-  }
+  "maintainers": []
 }
