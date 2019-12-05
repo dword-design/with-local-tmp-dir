@@ -3695,9 +3695,9 @@ package-hash@^3.0.0:
     release-zalgo "^1.0.0"
 
 package-name-regex@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/package-name-regex/-/package-name-regex-1.0.2.tgz#9edc3f97bdfbddec2fe6be918dfc8c5ac00fe237"
-  integrity sha512-3eaWh292fVGUa9stUR11M3bJjAb+jiYt2Pg+g2496JBpLsrFw3B1PJvTwv1cd/ws6HjowbVUa4cdBV7f9e1ARw==
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/package-name-regex/-/package-name-regex-1.0.3.tgz#7e387fb33adf672de8469109fc70ec26bb66fdfa"
+  integrity sha512-wZJ8P38znPduhjcpkz2HBMHCKR3VUeEOV5dEHLEhL0KERVIp0mqu5mBhoMcaeDJv/WGtiPusdeemKGzTvupXLw==
 
 parent-module@^1.0.0:
   version "1.0.1"
