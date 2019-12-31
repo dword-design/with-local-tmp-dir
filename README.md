@@ -30,7 +30,8 @@ Creates a temporary folder inside CWD and passes the path to a function. Afterwa
 <a href="https://npmjs.com" title="npm is a package manager for javascript"><h3>npm</h3></a>
 <ul>
 <li>Install: <code>npm install --save with-local-tmp-dir</code></li>
-<li>Require: <code>require('with-local-tmp-dir')</code></li>
+<li>Import: <code>import * as pkg from ('with-local-tmp-dir')</code></li>
+<li>Require: <code>const pkg = require('with-local-tmp-dir')</code></li>
 </ul>
 
 <!-- /INSTALL -->
