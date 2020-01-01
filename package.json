@@ -16,9 +16,6 @@
     "tmp",
     "with"
   ],
-  "bugs": {
-    "url": "https://github.com/dword-design/with-local-tmp-dir/issues"
-  },
   "repository": "dword-design/with-local-tmp-dir",
   "license": "MIT",
   "author": "Sebastian Landwehr <info@dword-design.de>",
@@ -36,13 +33,8 @@
     "tmp-promise": "^2.0.2"
   },
   "devDependencies": {
-    "@dword-design/base": "^3.4.4",
+    "@dword-design/base": "^4.0.0",
     "expect": "^24.9.0",
     "fs-extra": "^8.1.0"
-  },
-  "contributors": [
-    "Renovate Bot (http://renovatebot.com)",
-    "dword-design (http://www.dword-design.de)"
-  ],
-  "maintainers": []
+  }
 }
