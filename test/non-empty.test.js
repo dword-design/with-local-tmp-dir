@@ -1,6 +1,5 @@
 import withLocalTmpDir from 'with-local-tmp-dir'
 import { exists, outputFile } from 'fs-extra'
-import expect from 'expect'
 
 export default async () => {
   let path

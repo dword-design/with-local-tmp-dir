@@ -1,6 +1,5 @@
 import withLocalTmpDir from 'with-local-tmp-dir'
 import { basename } from 'path'
-import expect from 'expect'
 
 export default done => {
   withLocalTmpDir(async () => {
