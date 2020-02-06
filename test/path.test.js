@@ -1,7 +1,6 @@
 import withLocalTmpDir from 'with-local-tmp-dir'
 import { basename, dirname, join } from 'path'
 import { ensureDir, remove } from 'fs-extra'
-import expect from 'expect'
 
 export default done => {
   const cwd = process.cwd()
