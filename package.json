@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "chdir": "dword-design/node-chdir#fork",
-    "tmp-promise": "^2.0.2"
+    "tmp-promise": "^3.0.0"
   },
   "devDependencies": {
     "@dword-design/base": "^6.0.0",
