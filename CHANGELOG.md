@@ -1,3 +1,11 @@
+## [2.2.10](https://github.com/dword-design/with-local-tmp-dir/compare/v2.2.9...v2.2.10) (2020-05-12)
+
+
+### Bug Fixes
+
+* fix for new tmp version ([0524100](https://github.com/dword-design/with-local-tmp-dir/commit/0524100ad380b6c6dd0703c80778be3638ea195a))
+* **deps:** update dependency tmp-promise to v3 ([e41de35](https://github.com/dword-design/with-local-tmp-dir/commit/e41de357dec521198e39a27462e926279607fad9))
+
 ## [2.2.9](https://github.com/dword-design/with-local-tmp-dir/compare/v2.2.8...v2.2.9) (2020-03-19)
 
 
