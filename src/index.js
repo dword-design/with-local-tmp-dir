@@ -9,6 +9,6 @@ export default (...args) => {
 
   return tmp.withDir(
     ({ path }) => chdir(path, callback),
-    { unsafeCleanup, dir: path },
+    { unsafeCleanup, tmpdir: process.cwd(), dir: path },
   )
 }
