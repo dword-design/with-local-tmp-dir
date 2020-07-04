@@ -1,26 +1,42 @@
-import withLocalTmpDir from 'with-local-tmp-dir'
+import delay from 'delay'
+import { ensureDir, exists, outputFile, remove } from 'fs-extra'
 import P from 'path'
-import { exists, outputFile, ensureDir, remove } from 'fs-extra'
+
+import self from '.'
 
 export default {
-  'async function': done => {
-    withLocalTmpDir(async () => {
+  'async function': () =>
+    self(async () => {
       const path1 = process.cwd()
       await new Promise(resolve => setTimeout(resolve, 500))
       const path2 = process.cwd()
       expect(path1).toEqual(path2)
       expect(P.basename(path1).startsWith('tmp-')).toBeTruthy()
       expect(P.basename(path2).startsWith('tmp-')).toBeTruthy()
-    })
-      .then(done)
-  },
-  error: async () => {
+    }),
+  'error: async': async () => {
     const cwd = process.cwd()
     let path
-    await expect(withLocalTmpDir(async () => {
-      path = process.cwd()
-      throw new Error()
-    })).rejects.toThrow()
+    await expect(
+      self(async () => {
+        path = process.cwd()
+        await delay(10)
+        throw new Error()
+      })
+    ).rejects.toThrow()
+    expect(path).toBeDefined()
+    expect(await exists(path)).toBeFalsy()
+    expect(process.cwd()).toEqual(cwd)
+  },
+  'error: sync': async () => {
+    const cwd = process.cwd()
+    let path
+    await expect(
+      self(() => {
+        path = process.cwd()
+        throw new Error()
+      })
+    ).rejects.toThrow()
     expect(path).toBeDefined()
     expect(await exists(path)).toBeFalsy()
     expect(process.cwd()).toEqual(cwd)
@@ -28,7 +44,7 @@ export default {
   'non-empty': async () => {
     let path
     let innerFileExists = false
-    await withLocalTmpDir(async () => {
+    await self(async () => {
       path = process.cwd()
       await outputFile('foo.txt', 'foo')
       innerFileExists = await exists('foo.txt')
@@ -36,20 +52,19 @@ export default {
     expect(innerFileExists).toBeTruthy()
     expect(await exists(path)).toBeFalsy()
   },
-  path: done => {
+  path: async () => {
     const cwd = process.cwd()
-    ensureDir('foo')
-      .then(() => withLocalTmpDir('foo', () => {
-        expect(P.basename(process.cwd()).startsWith('tmp-')).toBeTruthy()
-        expect(P.dirname(process.cwd())).toEqual(P.join(cwd, 'foo'))
-      }))
-      .then(() => remove('foo'))
-      .then(done)
+    await ensureDir('foo')
+    self('foo', () => {
+      expect(P.basename(process.cwd()).startsWith('tmp-')).toBeTruthy()
+      expect(P.dirname(process.cwd())).toEqual(P.join(cwd, 'foo'))
+    })
+    await remove('foo')
   },
   simple: async () => {
     const cwd = process.cwd()
     let path
-    await withLocalTmpDir(() => {
+    await self(() => {
       expect(P.basename(process.cwd()).startsWith('tmp-')).toBeTruthy()
       expect(P.dirname(process.cwd())).toEqual(cwd)
       path = process.cwd()
@@ -60,20 +75,31 @@ export default {
   },
   'unsafe cleanup cwd': async () => {
     let path
-    await expect(withLocalTmpDir(async () => {
-      await outputFile('test.txt', '')
-      path = process.cwd()
-    }, { unsafeCleanup: false })).rejects.toThrow()
+    await expect(
+      self(
+        async () => {
+          await outputFile('test.txt', '')
+          path = process.cwd()
+        },
+        { unsafeCleanup: false }
+      )
+    ).rejects.toThrow()
     expect(await exists(path)).toBeTruthy()
     await remove(path)
   },
   'unsafe cleanup path': async () => {
     let path
     await ensureDir('foo')
-    await expect(withLocalTmpDir('foo', async () => {
-      await outputFile('test.txt', '')
-      path = process.cwd()
-    }, { unsafeCleanup: false })).rejects.toThrow()
+    await expect(
+      self(
+        'foo',
+        async () => {
+          await outputFile('test.txt', '')
+          path = process.cwd()
+        },
+        { unsafeCleanup: false }
+      )
+    ).rejects.toThrow()
     expect(P.dirname(path)).toEqual(P.resolve('foo'))
     expect(await exists(path)).toBeTruthy()
     await remove(path)
