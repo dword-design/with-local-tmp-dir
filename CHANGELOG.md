@@ -1,3 +1,10 @@
+## [2.2.11](https://github.com/dword-design/with-local-tmp-dir/compare/v2.2.10...v2.2.11) (2020-07-04)
+
+
+### Bug Fixes
+
+* fixes after upgrades ([349bece](https://github.com/dword-design/with-local-tmp-dir/commit/349becede2a4d8c878beb7cfdc1bf4c752612b71))
+
 ## [2.2.10](https://github.com/dword-design/with-local-tmp-dir/compare/v2.2.9...v2.2.10) (2020-05-12)
 
 
