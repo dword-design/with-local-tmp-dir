@@ -1,3 +1,10 @@
+## [2.2.13](https://github.com/dword-design/with-local-tmp-dir/compare/v2.2.12...v2.2.13) (2020-12-02)
+
+
+### Bug Fixes
+
+* **config:** Update changed files ([6c8e0a3](https://github.com/dword-design/with-local-tmp-dir/commit/6c8e0a39e8ca71643bcfa6852bee75d2f2e08716))
+
 ## [2.2.12](https://github.com/dword-design/with-local-tmp-dir/compare/v2.2.11...v2.2.12) (2020-08-26)
 
 
