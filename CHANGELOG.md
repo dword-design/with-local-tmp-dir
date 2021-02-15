@@ -1,3 +1,10 @@
+## [2.2.14](https://github.com/dword-design/with-local-tmp-dir/compare/v2.2.13...v2.2.14) (2021-02-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency delay to v5 ([#29](https://github.com/dword-design/with-local-tmp-dir/issues/29)) ([d4b82ce](https://github.com/dword-design/with-local-tmp-dir/commit/d4b82ce5254ee8acbe1b63f74330ea9662b98da2))
+
 ## [2.2.13](https://github.com/dword-design/with-local-tmp-dir/compare/v2.2.12...v2.2.13) (2020-12-02)
 
 
