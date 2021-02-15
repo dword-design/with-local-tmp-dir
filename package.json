@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@dword-design/base": "^6.0.0",
-    "delay": "^4.3.0",
+    "delay": "^5.0.0",
     "fs-extra": "^9.0.0"
   },
   "publishConfig": {
