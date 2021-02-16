@@ -103,5 +103,6 @@ export default {
     expect(P.dirname(path)).toEqual(P.resolve('foo'))
     expect(await exists(path)).toBeTruthy()
     await remove(path)
+    await remove('foo')
   },
 }
