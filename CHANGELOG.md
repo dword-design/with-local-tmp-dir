@@ -1,3 +1,10 @@
+## [2.2.15](https://github.com/dword-design/with-local-tmp-dir/compare/v2.2.14...v2.2.15) (2021-02-16)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/base to v7 ([#30](https://github.com/dword-design/with-local-tmp-dir/issues/30)) ([601cf68](https://github.com/dword-design/with-local-tmp-dir/commit/601cf688d7fd2f0fa528fb9345c59c1523a78925))
+
 ## [2.2.14](https://github.com/dword-design/with-local-tmp-dir/compare/v2.2.13...v2.2.14) (2021-02-15)
 
 
