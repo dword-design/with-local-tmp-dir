@@ -17,6 +17,7 @@
     "with"
   ],
   "repository": "dword-design/with-local-tmp-dir",
+  "funding": "https://www.buymeacoffee.com/dword",
   "license": "MIT",
   "author": "Sebastian Landwehr <info@dword-design.de>",
   "main": "dist/index.js",
