@@ -1,6 +1,6 @@
 {
   "name": "with-local-tmp-dir",
-  "version": "2.2.17",
+  "version": "2.2.18",
   "description": "Creates a temporary folder inside CWD and passes the path to a function. Afterwards, the folder is removed. Especially useful for testing.",
   "keywords": [
     "cleanup",

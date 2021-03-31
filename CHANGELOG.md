@@ -1,3 +1,10 @@
+## [2.2.18](https://github.com/dword-design/with-local-tmp-dir/compare/v2.2.17...v2.2.18) (2021-03-31)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#37](https://github.com/dword-design/with-local-tmp-dir/issues/37)) ([819be8f](https://github.com/dword-design/with-local-tmp-dir/commit/819be8feb333aae04dda44e963bacdd2aef3dd3d))
+
 ## [2.2.17](https://github.com/dword-design/with-local-tmp-dir/compare/v2.2.16...v2.2.17) (2021-03-22)
 
 
