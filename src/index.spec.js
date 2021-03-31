@@ -1,4 +1,4 @@
-import delay from 'delay'
+import { delay } from '@dword-design/functions'
 import { ensureDir, exists, outputFile, remove } from 'fs-extra'
 import P from 'path'
 
@@ -9,6 +9,7 @@ export default {
     self(async () => {
       const path1 = process.cwd()
       await new Promise(resolve => setTimeout(resolve, 500))
+
       const path2 = process.cwd()
       expect(path1).toEqual(path2)
       expect(P.basename(path1).startsWith('tmp-')).toBeTruthy()
