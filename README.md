@@ -88,7 +88,7 @@ await withLocalTmpDir('my-subpath', () => console.log(process.cwd()), { unsafeCl
 <!-- LICENSE/ -->
 ## Contribute
 
-Are you missing something or want to contribute? Feel free to file an [issue](https://github.com/dword-design/with-local-tmp-dir/issues) or [pull request](https://github.com/dword-design/with-local-tmp-dir/pulls)! ⚙️
+Are you missing something or want to contribute? Feel free to file an [issue](https://github.com/dword-design/with-local-tmp-dir/issues) or a [pull request](https://github.com/dword-design/with-local-tmp-dir/pulls)! ⚙️
 
 ## Support
 
