@@ -34,7 +34,7 @@
     "test": "base test"
   },
   "dependencies": {
-    "@dword-design/chdir": "^1.0.0",
+    "@dword-design/chdir": "^1.0.7",
     "tmp-promise": "^3.0.0"
   },
   "devDependencies": {
