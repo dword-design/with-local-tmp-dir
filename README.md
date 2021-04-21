@@ -50,8 +50,10 @@
 <!-- /BADGES -->
 
 <!-- DESCRIPTION/ -->
-Creates a temporary folder inside CWD and passes the path to a function. Afterwards, the folder is removed. Especially useful for testing.
+Creates a temporary folder inside cwd, cds inside the folder, runs a function, and removes the folder. Especially useful for testing.
 <!-- /DESCRIPTION -->
+
+This package can be used to write file-based tests with real files. See below for some examples.
 
 <!-- INSTALL/ -->
 ## Install
@@ -65,29 +67,106 @@ $ yarn add with-local-tmp-dir
 ```
 <!-- /INSTALL -->
 
-## Usage
+## Basic Usage
 
 ```js
-const withLocalTmpDir = require('with-local-tmp-dir')
+import withLocalTmpDir from 'with-local-tmp-dir'
+import fs from 'fs-extra'
 
 await withLocalTmpDir(() => {
   console.log(process.cwd())
   //> /Users/max/project/tmp-18815DudQxmdn03Rz
+
+  // Create some files
+  await fs.outputFile('foo.txt', 'foo bar')
+  await fs.outputFile('bar.txt', 'foo bar')
 })
 // Now the folder does not exist anymore
 
-// Also works with async functions =)
-await withLocalTmpDir(async () => await ...)
-
 // The folder is removed even if an exception is thrown
-await withLocalTmpDir(async () => throw new Error('File could not be found'))
-
-// Create the temporary folder in a specific path
-await withLocalTmpDir('my-subpath', () => console.log(process.cwd()))
-
-// Keep folder if not empty
-await withLocalTmpDir('my-subpath', () => console.log(process.cwd()), { unsafeCleanup: false })
+await withLocalTmpDir(() => throw new Error('File could not be found'))
 ```
+
+## Options
+
+You can specify an options object that is passed down to [tmp-promise](https://github.com/benjamingr/tmp-promise). Check the readme for details. Some default values are adjusted, but they still can be overridden.
+
+```js
+import withLocalTmpDir from 'with-local-tmp-dir'
+import fs from 'fs-extra'
+
+// run in a subfolder
+await withLocalTmpDir(() => {
+  console.log(process.cwd())
+  //> /Users/max/project/foo/tmp-18815DudQxmdn03Rz
+}, { dir: 'foo' })
+
+// do not cleanup if there are files
+await withLocalTmpDir(() => {
+  await fs.outputFile('foo.txt', 'foo bar')
+}, { unsafeCleanup: false })
+
+// use a different prefix
+await withLocalTmpDir(() => {
+  console.log(process.cwd())
+  //> /Users/max/project/foo-18815DudQxmdn03Rz
+}, { prefix: 'foo' })
+```
+
+## Unit Tests with output-files and endent
+
+The most common use case for this package is probably unit tests with Mocha or Jest. The package itself is framework-agnostic, so you can use any of them. To make life easier when writing multiple files with multi-line text content, there are two handy packages: [output-files](git@github.com:dword-design/output-files.git) and [endent](https://github.com/indentjs/endent).
+
+The following is an example for Mocha:
+
+```js
+import withLocalTmpDir from 'with-local-tmp-dir'
+import outputFiles from 'output-files'
+import endent from 'endent'
+
+import funcToTest from '.'
+
+it('works', () => withLocalTmpDir(async () => {
+  await outputFiles({
+    'foo.txt': endent`
+      Lorem ipsum
+      dolor sit
+    `,
+    'index.js': endent`
+      export default {
+        foo: 1,
+        bar: 2,
+      }
+    `,
+  })
+  funcToTest()
+})
+```
+
+## Git-Based Tests
+
+It is also possible to test libraries that make use of Git. You can instantiate a local Git repository inside the temporary folder and run Git operations on it:
+
+```js
+import withLocalTmpDir from 'with-local-tmp-dir'
+import fs from 'fs-extra'
+import execa from 'execa'
+
+it('works', () => withLocalTmpDir(async () => {
+  await execa.command('git init')
+  await execa.command('git config user.email "foo@bar.de"')
+  await execa.command('git config user.name "foo"')
+
+  await outputFile('foo.txt', 'foo bar')
+
+  await execa.command('git add .')
+  await execa.command('git commit -m "feat: init"')
+  await execa.command('git push')
+  funcToTest()
+})
+```
+
+Be careful though, if the repository is not properly initialized, your user Git config might be overridden!
 
 <!-- LICENSE/ -->
 ## Contribute
