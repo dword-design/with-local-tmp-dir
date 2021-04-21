@@ -1,6 +1,6 @@
 {
   "name": "with-local-tmp-dir",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Creates a temporary folder inside cwd, cds inside the folder, runs a function, and removes the folder. Especially useful for testing.",
   "keywords": [
     "cleanup",
