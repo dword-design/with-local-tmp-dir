@@ -161,7 +161,6 @@ it('works', () => withLocalTmpDir(async () => {
 
   await execa.command('git add .')
   await execa.command('git commit -m "feat: init"')
-  await execa.command('git push')
   funcToTest()
 })
 ```
