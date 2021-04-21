@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/dword-design/with-local-tmp-dir/compare/v2.2.19...v3.0.0) (2021-04-21)
+
+
+### Bug Fixes
+
+* remove path argument and add some doc ([#44](https://github.com/dword-design/with-local-tmp-dir/issues/44)) ([990f37a](https://github.com/dword-design/with-local-tmp-dir/commit/990f37a140fc92512fa6d886a38ae6744966b120))
+
+
+### BREAKING CHANGES
+
+* use dir option instead
+
 ## [2.2.19](https://github.com/dword-design/with-local-tmp-dir/compare/v2.2.18...v2.2.19) (2021-04-12)
 
 
