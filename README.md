@@ -70,8 +70,8 @@ $ yarn add with-local-tmp-dir
 ## Basic Usage
 
 ```js
-import withLocalTmpDir from 'with-local-tmp-dir'
-import fs from 'fs-extra'
+const withLocalTmpDir = require('with-local-tmp-dir')
+const fs = require('fs-extra')
 
 await withLocalTmpDir(() => {
   console.log(process.cwd())
@@ -92,8 +92,8 @@ await withLocalTmpDir(() => throw new Error('File could not be found'))
 You can specify an options object that is passed down to [tmp-promise](https://github.com/benjamingr/tmp-promise). Check the readme for details. Some default values are adjusted, but they still can be overridden.
 
 ```js
-import withLocalTmpDir from 'with-local-tmp-dir'
-import fs from 'fs-extra'
+const withLocalTmpDir = require('with-local-tmp-dir')
+const fs = require('fs-extra')
 
 // run in a subfolder
 await withLocalTmpDir(() => {
@@ -120,11 +120,11 @@ The most common use case for this package is probably unit tests with Mocha or J
 The following is an example for Mocha:
 
 ```js
-import withLocalTmpDir from 'with-local-tmp-dir'
-import outputFiles from 'output-files'
-import endent from 'endent'
+const withLocalTmpDir = require('with-local-tmp-dir')
+const outputFiles = require('output-files')
+const endent = require('endent')
 
-import funcToTest from '.'
+const funcToTest = require('.')
 
 it('works', () => withLocalTmpDir(async () => {
   await outputFiles({
@@ -148,9 +148,9 @@ it('works', () => withLocalTmpDir(async () => {
 It is also possible to test libraries that make use of Git. You can instantiate a local Git repository inside the temporary folder and run Git operations on it:
 
 ```js
-import withLocalTmpDir from 'with-local-tmp-dir'
-import fs from 'fs-extra'
-import execa from 'execa'
+const withLocalTmpDir = require('with-local-tmp-dir')
+const fs = require('fs-extra')
+const execa = require('execa')
 
 it('works', () => withLocalTmpDir(async () => {
   await execa.command('git init')
