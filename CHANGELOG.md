@@ -1,3 +1,10 @@
+## [3.0.2](https://github.com/dword-design/with-local-tmp-dir/compare/v3.0.1...v3.0.2) (2021-04-27)
+
+
+### Bug Fixes
+
+* update readme ([94d7306](https://github.com/dword-design/with-local-tmp-dir/commit/94d730611f0cfd9562bbf914d401b537fa933c03))
+
 ## [3.0.1](https://github.com/dword-design/with-local-tmp-dir/compare/v3.0.0...v3.0.1) (2021-04-21)
 
 
