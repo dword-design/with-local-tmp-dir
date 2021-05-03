@@ -1,3 +1,19 @@
+# [4.0.0](https://github.com/dword-design/with-local-tmp-dir/compare/v3.0.2...v4.0.0) (2021-05-03)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/base to v8 ([#47](https://github.com/dword-design/with-local-tmp-dir/issues/47)) ([b65c6ef](https://github.com/dword-design/with-local-tmp-dir/commit/b65c6ef520d7a396b5b7ce5716a28965a9253623))
+
+
+### BREAKING CHANGES
+
+* require Node.js >= 12
+
+Co-authored-by: Renovate Bot <bot@renovateapp.com>
+Co-authored-by: Sebastian Landwehr <info@dword-design.de>
+Co-authored-by: GitHub Actions <actions@github.com>
+
 ## [3.0.2](https://github.com/dword-design/with-local-tmp-dir/compare/v3.0.1...v3.0.2) (2021-04-27)
 
 
