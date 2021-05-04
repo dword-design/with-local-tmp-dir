@@ -1,3 +1,10 @@
+## [4.0.1](https://github.com/dword-design/with-local-tmp-dir/compare/v4.0.0...v4.0.1) (2021-05-04)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/chdir to v2 ([#48](https://github.com/dword-design/with-local-tmp-dir/issues/48)) ([237aa10](https://github.com/dword-design/with-local-tmp-dir/commit/237aa10802a6873d629573678783ac64f50eb54d))
+
 # [4.0.0](https://github.com/dword-design/with-local-tmp-dir/compare/v3.0.2...v4.0.0) (2021-05-03)
 
 
