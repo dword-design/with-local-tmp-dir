@@ -1,3 +1,10 @@
+## [4.0.2](https://github.com/dword-design/with-local-tmp-dir/compare/v4.0.1...v4.0.2) (2021-05-04)
+
+
+### Bug Fixes
+
+* update dependency fs-extra to v10 ([#50](https://github.com/dword-design/with-local-tmp-dir/issues/50)) ([2258cbc](https://github.com/dword-design/with-local-tmp-dir/commit/2258cbcc00076e4319723ba5c81f366cc34e8add))
+
 ## [4.0.1](https://github.com/dword-design/with-local-tmp-dir/compare/v4.0.0...v4.0.1) (2021-05-04)
 
 
