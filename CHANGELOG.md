@@ -1,3 +1,10 @@
+## [4.0.3](https://github.com/dword-design/with-local-tmp-dir/compare/v4.0.2...v4.0.3) (2021-05-04)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/functions to v4 ([#49](https://github.com/dword-design/with-local-tmp-dir/issues/49)) ([d178636](https://github.com/dword-design/with-local-tmp-dir/commit/d178636ba233af9d9b6ca57797ee64a6b85fa3b8))
+
 ## [4.0.2](https://github.com/dword-design/with-local-tmp-dir/compare/v4.0.1...v4.0.2) (2021-05-04)
 
 
