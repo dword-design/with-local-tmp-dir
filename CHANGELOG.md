@@ -1,3 +1,10 @@
+## [4.0.6](https://github.com/dword-design/with-local-tmp-dir/compare/v4.0.5...v4.0.6) (2021-06-29)
+
+
+### Bug Fixes
+
+* see also ([ce61e02](https://github.com/dword-design/with-local-tmp-dir/commit/ce61e02e471f2457aae36ba0bd596c4164272282))
+
 ## [4.0.5](https://github.com/dword-design/with-local-tmp-dir/compare/v4.0.4...v4.0.5) (2021-06-14)
 
 
