@@ -1,0 +1,9 @@
+{
+  "seeAlso": [
+    { "repository": "output-files", "description": "Output a tree of files and directories by providing an object. Especially useful for testing with real files." },
+    { "repository": "expect-mocha-image-snapshot", "description": "A wrapper around jest-image-snapshot that makes it compatible to Mocha." },
+    { "repository": "jest-image-matcher", "description": "A Jest matcher for image comparisons based on pixelmatch. Can also be used with Mocha. Useful for visual regression testing." },
+    { "repository": "unify-mocha-output", "description": "Adjusts a Mocha output so that it is consistent across platforms and can be used for snapshot testing. Basically adjusts the checkmark symbol and removes time values." },
+    { "repository": "mock-argv", "description": "Temporarily overrides the command line arguments. This is useful for testing." }
+  ]
+}
