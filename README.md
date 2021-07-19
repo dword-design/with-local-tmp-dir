@@ -202,7 +202,7 @@ Hey, I am Sebastian Landwehr, a freelance web developer, and I love developing w
 
 Thanks a lot for your support! ❤️
 
-## See Also
+## See also
 
 * [output-files](https://github.com/dword-design/output-files): Output a tree of files and directories by providing an object. Especially useful for testing with real files.
 * [expect-mocha-image-snapshot](https://github.com/dword-design/expect-mocha-image-snapshot): A wrapper around jest-image-snapshot that makes it compatible to Mocha.
