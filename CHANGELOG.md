@@ -1,3 +1,10 @@
+## [4.0.10](https://github.com/dword-design/with-local-tmp-dir/compare/v4.0.9...v4.0.10) (2022-01-04)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#82](https://github.com/dword-design/with-local-tmp-dir/issues/82)) ([a6363bf](https://github.com/dword-design/with-local-tmp-dir/commit/a6363bf4fcaa0fa4fd68fcfa401862de57bcd40c))
+
 ## [4.0.9](https://github.com/dword-design/with-local-tmp-dir/compare/v4.0.8...v4.0.9) (2021-08-09)
 
 
