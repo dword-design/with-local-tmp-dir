@@ -3,7 +3,7 @@
 <!-- /TITLE -->
 
 <!-- BADGES/ -->
-<p>
+  <p>
     <a href="https://npmjs.org/package/with-local-tmp-dir">
       <img
         src="https://img.shields.io/npm/v/with-local-tmp-dir.svg"
