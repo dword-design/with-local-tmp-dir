@@ -87,6 +87,29 @@ await withLocalTmpDir(() => {
 await withLocalTmpDir(() => throw new Error('File could not be found'))
 ```
 
+## Reset
+
+Instead of a function you can reset the state yourself instead of passing a function, i.e. change to the previous folder and remove the folder:
+
+```js
+const withLocalTmpDir = require('with-local-tmp-dir')
+const fs = require('fs-extra')
+
+// You can still pass options
+const reset = await withLocalTmpDir()
+
+console.log(process.cwd())
+//> /Users/max/project/tmp-18815DudQxmdn03Rz
+
+// Create some files
+await fs.outputFile('foo.txt', 'foo bar')
+await fs.outputFile('bar.txt', 'foo bar')
+
+await reset()
+
+// Now the folder does not exist anymore
+```
+
 ## Options
 
 You can specify an options object that is passed down to [tmp-promise](https://github.com/benjamingr/tmp-promise). Check the readme for details. Some default values are adjusted, but they still can be overridden.
@@ -95,16 +118,16 @@ You can specify an options object that is passed down to [tmp-promise](https://g
 const withLocalTmpDir = require('with-local-tmp-dir')
 const fs = require('fs-extra')
 
+// do not cleanup if there are files
+await withLocalTmpDir(() => {
+  await fs.outputFile('foo.txt', 'foo bar')
+}, { unsafeCleanup: false })
+
 // run in a subfolder
 await withLocalTmpDir(() => {
   console.log(process.cwd())
   //> /Users/max/project/foo/tmp-18815DudQxmdn03Rz
 }, { dir: 'foo' })
-
-// do not cleanup if there are files
-await withLocalTmpDir(() => {
-  await fs.outputFile('foo.txt', 'foo bar')
-}, { unsafeCleanup: false })
 
 // use a different prefix
 await withLocalTmpDir(() => {
@@ -126,7 +149,15 @@ const endent = require('endent')
 
 const funcToTest = require('.')
 
-it('works', () => withLocalTmpDir(async () => {
+beforeEach(async function () {
+  this.resetWithLocalTmpDir = await withLocalTmpDir()
+})
+
+afterEach(async function () {
+  await this.resetWithLocalTmpDir()
+})
+
+it('works', async () => {
   await outputFiles({
     'foo.txt': endent`
       Lorem ipsum
@@ -143,7 +174,7 @@ it('works', () => withLocalTmpDir(async () => {
 })
 ```
 
-## Git-Based Tests
+## Git-based tests
 
 It is also possible to test libraries that make use of Git. You can instantiate a local Git repository inside the temporary folder and run Git operations on it:
 
@@ -152,7 +183,15 @@ const withLocalTmpDir = require('with-local-tmp-dir')
 const fs = require('fs-extra')
 const execa = require('execa')
 
-it('works', () => withLocalTmpDir(async () => {
+beforeEach(async function () {
+  this.resetWithLocalTmpDir = await withLocalTmpDir()
+})
+
+afterEach(async function () {
+  await this.resetWithLocalTmpDir()
+})
+
+it('works', async () => {
   await execa.command('git init')
   await execa.command('git config user.email "foo@bar.de"')
   await execa.command('git config user.name "foo"')
