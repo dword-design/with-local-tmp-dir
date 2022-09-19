@@ -1,3 +1,10 @@
+# [4.1.0](https://github.com/dword-design/with-local-tmp-dir/compare/v4.0.11...v4.1.0) (2022-09-19)
+
+
+### Features
+
+* custom reset ([#106](https://github.com/dword-design/with-local-tmp-dir/issues/106)) ([e715e02](https://github.com/dword-design/with-local-tmp-dir/commit/e715e02b3258dff79886d0b989210d5ffe0063bd))
+
 ## [4.0.11](https://github.com/dword-design/with-local-tmp-dir/compare/v4.0.10...v4.0.11) (2022-01-12)
 
 
