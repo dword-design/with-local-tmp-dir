@@ -17,18 +17,6 @@ export default {
     expect(P.basename(path1).startsWith('tmp-')).toBeTruthy()
     expect(P.basename(path2).startsWith('tmp-')).toBeTruthy()
   },
-  reset: async () => {
-    const cwd = process.cwd()
-
-    const reset = await self()
-
-    const path = process.cwd()
-    expect(P.basename(path).startsWith('tmp-')).toBeTruthy()
-    expect(P.dirname(path)).toEqual(cwd)
-    await reset()
-    expect(process.cwd()).toEqual(cwd)
-    expect(await exists(path)).toBeFalsy()
-  },
   dir: async () => {
     const cwd = process.cwd()
     await ensureDir('foo')
@@ -83,6 +71,18 @@ export default {
     await self(() => (path = process.cwd()), { prefix: 'foo' })
     expect(P.basename(path).startsWith('foo-')).toBeTruthy()
     expect(P.dirname(path)).toEqual(process.cwd())
+  },
+  reset: async () => {
+    const cwd = process.cwd()
+
+    const reset = await self()
+
+    const path = process.cwd()
+    expect(P.basename(path).startsWith('tmp-')).toBeTruthy()
+    expect(P.dirname(path)).toEqual(cwd)
+    await reset()
+    expect(process.cwd()).toEqual(cwd)
+    expect(await exists(path)).toBeFalsy()
   },
   simple: async () => {
     const cwd = process.cwd()
