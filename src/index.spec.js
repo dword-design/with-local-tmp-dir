@@ -55,8 +55,6 @@ export default {
     expect(await exists(path)).toBeFalsy()
     expect(process.cwd()).toEqual(cwd)
   },
-  'no callback': () =>
-    expect(self).toThrow('Callback is required for with-local-tmp-dir'),
   'non-empty': async () => {
     let path
     let innerFileExists = false
@@ -73,6 +71,18 @@ export default {
     await self(() => (path = process.cwd()), { prefix: 'foo' })
     expect(P.basename(path).startsWith('foo-')).toBeTruthy()
     expect(P.dirname(path)).toEqual(process.cwd())
+  },
+  reset: async () => {
+    const cwd = process.cwd()
+
+    const reset = await self()
+
+    const path = process.cwd()
+    expect(P.basename(path).startsWith('tmp-')).toBeTruthy()
+    expect(P.dirname(path)).toEqual(cwd)
+    await reset()
+    expect(process.cwd()).toEqual(cwd)
+    expect(await exists(path)).toBeFalsy()
   },
   simple: async () => {
     const cwd = process.cwd()
