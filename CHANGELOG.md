@@ -1,3 +1,15 @@
+# [5.0.0](https://github.com/dword-design/with-local-tmp-dir/compare/v4.1.0...v5.0.0) (2023-01-08)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#107](https://github.com/dword-design/with-local-tmp-dir/issues/107)) ([49789ad](https://github.com/dword-design/with-local-tmp-dir/commit/49789ada765a56043c17fe31c6586efc7041e140))
+
+
+### BREAKING CHANGES
+
+* drop node 12, move to esm
+
 # [4.1.0](https://github.com/dword-design/with-local-tmp-dir/compare/v4.0.11...v4.1.0) (2022-09-19)
 
 
