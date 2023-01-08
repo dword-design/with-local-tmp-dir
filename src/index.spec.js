@@ -1,8 +1,8 @@
 import { delay } from '@dword-design/functions'
-import { ensureDir, exists, outputFile, remove } from 'fs-extra'
+import fs from 'fs-extra'
 import P from 'path'
 
-import self from '.'
+import self from './index.js'
 
 export default {
   'async function': async () => {
@@ -19,14 +19,14 @@ export default {
   },
   dir: async () => {
     const cwd = process.cwd()
-    await ensureDir('foo')
+    await fs.ensureDir('foo')
     let innerCwd
     await self(() => (innerCwd = process.cwd()), {
       dir: 'foo',
     })
     expect(P.basename(innerCwd).startsWith('tmp-')).toBeTruthy()
     expect(P.dirname(innerCwd)).toEqual(P.join(cwd, 'foo'))
-    await remove('foo')
+    await fs.remove('foo')
   },
   'error: async': async () => {
     const cwd = process.cwd()
@@ -39,7 +39,7 @@ export default {
       })
     ).rejects.toThrow()
     expect(path).toBeDefined()
-    expect(await exists(path)).toBeFalsy()
+    expect(await fs.exists(path)).toBeFalsy()
     expect(process.cwd()).toEqual(cwd)
   },
   'error: sync': async () => {
@@ -52,7 +52,7 @@ export default {
       })
     ).rejects.toThrow()
     expect(path).toBeDefined()
-    expect(await exists(path)).toBeFalsy()
+    expect(await fs.exists(path)).toBeFalsy()
     expect(process.cwd()).toEqual(cwd)
   },
   'non-empty': async () => {
@@ -60,11 +60,11 @@ export default {
     let innerFileExists = false
     await self(async () => {
       path = process.cwd()
-      await outputFile('foo.txt', 'foo')
-      innerFileExists = await exists('foo.txt')
+      await fs.outputFile('foo.txt', 'foo')
+      innerFileExists = await fs.exists('foo.txt')
     })
     expect(innerFileExists).toBeTruthy()
-    expect(await exists(path)).toBeFalsy()
+    expect(await fs.exists(path)).toBeFalsy()
   },
   prefix: async () => {
     let path
@@ -82,7 +82,7 @@ export default {
     expect(P.dirname(path)).toEqual(cwd)
     await reset()
     expect(process.cwd()).toEqual(cwd)
-    expect(await exists(path)).toBeFalsy()
+    expect(await fs.exists(path)).toBeFalsy()
   },
   simple: async () => {
     const cwd = process.cwd()
@@ -91,37 +91,37 @@ export default {
     expect(process.cwd()).toEqual(cwd)
     expect(P.basename(path).startsWith('tmp-')).toBeTruthy()
     expect(P.dirname(path)).toEqual(cwd)
-    expect(await exists(path)).toBeFalsy()
+    expect(await fs.exists(path)).toBeFalsy()
   },
   'unsafe cleanup and dir': async () => {
     let path
-    await ensureDir('foo')
+    await fs.ensureDir('foo')
     await expect(
       self(
         async () => {
-          await outputFile('test.txt', '')
+          await fs.outputFile('test.txt', '')
           path = process.cwd()
         },
         { dir: 'foo', unsafeCleanup: false }
       )
     ).rejects.toThrow()
     expect(P.dirname(path)).toEqual(P.resolve('foo'))
-    expect(await exists(path)).toBeTruthy()
-    await remove(path)
-    await remove('foo')
+    expect(await fs.exists(path)).toBeTruthy()
+    await fs.remove(path)
+    await fs.remove('foo')
   },
   'unsafe cleanup cwd': async () => {
     let path
     await expect(
       self(
         async () => {
-          await outputFile('test.txt', '')
+          await fs.outputFile('test.txt', '')
           path = process.cwd()
         },
         { unsafeCleanup: false }
       )
     ).rejects.toThrow()
-    expect(await exists(path)).toBeTruthy()
-    await remove(path)
+    expect(await fs.exists(path)).toBeTruthy()
+    await fs.remove(path)
   },
 }
