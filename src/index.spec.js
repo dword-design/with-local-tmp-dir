@@ -36,7 +36,7 @@ export default {
         path = process.cwd()
         await delay(10)
         throw new Error()
-      })
+      }),
     ).rejects.toThrow()
     expect(path).toBeDefined()
     expect(await fs.exists(path)).toBeFalsy()
@@ -49,7 +49,7 @@ export default {
       self(() => {
         path = process.cwd()
         throw new Error()
-      })
+      }),
     ).rejects.toThrow()
     expect(path).toBeDefined()
     expect(await fs.exists(path)).toBeFalsy()
@@ -102,8 +102,8 @@ export default {
           await fs.outputFile('test.txt', '')
           path = process.cwd()
         },
-        { dir: 'foo', unsafeCleanup: false }
-      )
+        { dir: 'foo', unsafeCleanup: false },
+      ),
     ).rejects.toThrow()
     expect(P.dirname(path)).toEqual(P.resolve('foo'))
     expect(await fs.exists(path)).toBeTruthy()
@@ -118,8 +118,8 @@ export default {
           await fs.outputFile('test.txt', '')
           path = process.cwd()
         },
-        { unsafeCleanup: false }
-      )
+        { unsafeCleanup: false },
+      ),
     ).rejects.toThrow()
     expect(await fs.exists(path)).toBeTruthy()
     await fs.remove(path)
