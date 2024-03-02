@@ -1,3 +1,10 @@
+# [5.1.0](https://github.com/dword-design/with-local-tmp-dir/compare/v5.0.1...v5.1.0) (2024-03-02)
+
+
+### Features
+
+* Add types for default export ([#127](https://github.com/dword-design/with-local-tmp-dir/issues/127)) ([e8c9bc8](https://github.com/dword-design/with-local-tmp-dir/commit/e8c9bc8262f9598fdc9f98b4e6f2d7470b427fbd))
+
 ## [5.0.1](https://github.com/dword-design/with-local-tmp-dir/compare/v5.0.0...v5.0.1) (2023-04-09)
 
 
