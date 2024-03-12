@@ -1,3 +1,10 @@
+## [5.1.1](https://github.com/dword-design/with-local-tmp-dir/compare/v5.1.0...v5.1.1) (2024-03-12)
+
+
+### Bug Fixes
+
+* Correct arg order ([#128](https://github.com/dword-design/with-local-tmp-dir/issues/128)) ([056ef3b](https://github.com/dword-design/with-local-tmp-dir/commit/056ef3beff97b4fe10ba3c73f26562489f1317c2))
+
 # [5.1.0](https://github.com/dword-design/with-local-tmp-dir/compare/v5.0.1...v5.1.0) (2024-03-02)
 
 
