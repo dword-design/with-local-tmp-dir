@@ -3,9 +3,12 @@
     ":semanticCommits",
     ":semanticPrefixFix"
   ],
-  "ignorePaths": [
-    ".github/workflows/build.yml"
+  "gitIgnoredAuthors": [
+    "actions@github.com"
   ],
+  "github-actions": {
+    "enabled": false
+  },
   "labels": [
     "maintenance"
   ],
@@ -14,14 +17,28 @@
     "enabled": true,
     "semanticCommitType": "chore"
   },
-  "packageRules": [
+  "rangeStrategy": "replace",
+  "regexManagers": [
     {
-      "automerge": true,
-      "matchCurrentVersion": ">=1.0.0",
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ]
+      "datasourceTemplate": "github-tags",
+      "fileMatch": [
+        "\\.ts$"
+      ],
+      "matchStrings": [
+        "(^|[^\\w])gitHubAction`(?<depName>.*?)@v(?<currentValue>.*?)`"
+      ],
+      "versioningTemplate": "npm"
+    },
+    {
+      "datasourceTemplate": "node-version",
+      "depNameTemplate": "node",
+      "fileMatch": [
+        "\\.ts$"
+      ],
+      "matchStrings": [
+        "(^|[^\\w])nodejsVersion`(?<currentValue>.*?)`"
+      ],
+      "versioningTemplate": "node"
     }
   ],
   "semanticCommitScope": null
