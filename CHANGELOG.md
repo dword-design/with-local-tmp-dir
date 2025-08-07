@@ -1,3 +1,17 @@
+# [6.0.0](https://github.com/dword-design/with-local-tmp-dir/compare/v5.1.1...v6.0.0) (2025-08-07)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#121](https://github.com/dword-design/with-local-tmp-dir/issues/121)) ([7eebb76](https://github.com/dword-design/with-local-tmp-dir/commit/7eebb762c5deaccacb61a8a128a470c54dea65ae))
+
+
+### BREAKING CHANGES
+
+* node.js >= 20
+* some type changes, mostly added some generics
+* dropped tmp dependency. i took over most options, if something is missing, feel free to open an issue
+
 ## [5.1.1](https://github.com/dword-design/with-local-tmp-dir/compare/v5.1.0...v5.1.1) (2024-03-12)
 
 
