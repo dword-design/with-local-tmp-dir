@@ -24,6 +24,7 @@ export interface Options extends NameOptions {
   tries: number;
   keep: boolean;
   unsafeCleanup: boolean;
+  mode: number;
 }
 
 /**
@@ -96,6 +97,7 @@ export default (async <TCallbackReturn>(
   options = {
     dir: '.',
     keep: false,
+    mode: 0o700,
     prefix: 'tmp',
     tries: 3,
     unsafeCleanup: true,
@@ -104,8 +106,21 @@ export default (async <TCallbackReturn>(
 
   const callback = args.find(arg => typeof arg === 'function');
   const path = _generateTmpName(options);
-  await fs.ensureDir(path);
-  await pRetry(() => fs.stat(path), { retries: options.tries });
+
+  await pRetry(
+    async () => {
+      try {
+        await fs.stat(path);
+      } catch {
+        return;
+      }
+
+      throw new Error(`Temporary directory already exists: ${path}`);
+    },
+    { retries: options.tries },
+  );
+
+  await fs.ensureDir(path, options.mode);
 
   const removeFunction = options.unsafeCleanup
     ? fs.remove.bind(fs)
