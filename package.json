@@ -48,7 +48,7 @@
   "dependencies": {
     "@dword-design/chdir": "^4.0.0",
     "@types/fs-extra": "^11.0.4",
-    "p-retry": "^6.2.1"
+    "p-retry": "^7.0.0"
   },
   "devDependencies": {
     "@dword-design/base": "^15.3.3",
