@@ -1,3 +1,15 @@
+# [7.0.0](https://github.com/dword-design/with-local-tmp-dir/compare/v6.0.0...v7.0.0) (2025-12-15)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/base to v16 ([#152](https://github.com/dword-design/with-local-tmp-dir/issues/152)) ([d0460c2](https://github.com/dword-design/with-local-tmp-dir/commit/d0460c20e7a18dff283377ceaeb9a4dc64f8965f))
+
+
+### BREAKING CHANGES
+
+* node >= 22
+
 # [6.0.0](https://github.com/dword-design/with-local-tmp-dir/compare/v5.1.1...v6.0.0) (2025-08-07)
 
 
