@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@dword-design/chdir':
-        specifier: ^4.0.0
-        version: 4.0.0
+        specifier: ^5.0.0
+        version: 5.0.0
       '@types/fs-extra':
         specifier: ^11.0.4
         version: 11.0.4
@@ -225,9 +225,9 @@ packages:
     engines: {node: '>=22'}
     hasBin: true
 
-  '@dword-design/chdir@4.0.0':
-    resolution: {integrity: sha512-Lw0SDZbeMnsGwBwZNeazDh5RL9oVXsEVD9M3S2hOrgQTNq3LwCs7ndxO72exOGqC+OVQBt8OFQ08gsUOX7mdCQ==}
-    engines: {node: '>=20'}
+  '@dword-design/chdir@5.0.0':
+    resolution: {integrity: sha512-ytt3+AafN05qN1x7AxE9Q28zrgMlbxasR84psY4LC3cpGjrrF255fE1ZznGzxyQdPInlfWwgkXS8Nt94KIibbA==}
+    engines: {node: '>=22'}
 
   '@dword-design/ci@5.0.0':
     resolution: {integrity: sha512-iU2ZNChtdYL51LJp016VCBmWzgRQAwdUKuJfDewfOJMQ4e2oHlzRW8tP2FB5Nh3VcgVMpbDMG70ZKgo2i4/E+A==}
@@ -4720,7 +4720,7 @@ snapshots:
       - sass
       - supports-color
 
-  '@dword-design/chdir@4.0.0': {}
+  '@dword-design/chdir@5.0.0': {}
 
   '@dword-design/ci@5.0.0':
     dependencies:
