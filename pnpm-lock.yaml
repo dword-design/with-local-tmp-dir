@@ -15,23 +15,23 @@ importers:
         specifier: ^11.0.4
         version: 11.0.4
       p-retry:
-        specifier: ^6.2.1
-        version: 6.2.1
+        specifier: ^7.1.1
+        version: 7.1.1
     devDependencies:
       '@dword-design/base':
-        specifier: ^16.0.0
+        specifier: ^16.1.4
         version: 16.1.4(@types/node@25.0.2)(@typescript-eslint/parser@8.49.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.49.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.25)(esbuild@0.27.1)
       '@playwright/test':
-        specifier: ^1.54.2
+        specifier: ^1.57.0
         version: 1.57.0
       '@types/tmp':
         specifier: ^0.2.6
         version: 0.2.6
       delay:
-        specifier: ^6.0.0
-        version: 6.0.0
+        specifier: ^7.0.0
+        version: 7.0.0
       fs-extra:
-        specifier: ^11.3.1
+        specifier: ^11.3.2
         version: 11.3.2
 
 packages:
@@ -909,9 +909,6 @@ packages:
   '@types/parse-json@4.0.2':
     resolution: {integrity: sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==}
 
-  '@types/retry@0.12.2':
-    resolution: {integrity: sha512-XISRgDJ2Tc5q4TRqvgJtzsRkFYNJzZrhTdtMoGVBttwzzQJkPnS3WWTFc7kuDRoPtPakl+T+OfdEUjYJj7Jbow==}
-
   '@types/tmp@0.2.6':
     resolution: {integrity: sha512-chhaNf2oKHlRkDGt+tiKE2Z5aJ6qalm7Z9rlLdBwmOiAAf09YQvvoLXjWK4HWPF1xU/fqvMgfNfpVoBscA/tKA==}
 
@@ -1700,6 +1697,10 @@ packages:
   delay@6.0.0:
     resolution: {integrity: sha512-2NJozoOHQ4NuZuVIr5CWd0iiLVIRSDepakaovIN+9eIDHEhdCAEvSy2cuf1DCrPPQLvHmbqTHODlhHg8UCy4zw==}
     engines: {node: '>=16'}
+
+  delay@7.0.0:
+    resolution: {integrity: sha512-C3vaGs818qzZjCvVJ98GQUMVyWeg7dr5w2Nwwb2t5K8G98jOyyVO2ti2bKYk5yoYElqH3F2yA53ykuEnwD6MCg==}
+    engines: {node: '>=20'}
 
   depcheck-detector-bin-name@1.0.2:
     resolution: {integrity: sha512-NCJ8B0De9ILI+ClVwqJn3J6Dj1TKM9xmAWXTGu/ThQePMpt83KXt1abed+ndBEV5AbnwGmU7PVx1jpDH69oklg==}
@@ -3223,9 +3224,9 @@ packages:
     resolution: {integrity: sha512-xsrIUgI0Kn6iyDYm9StOpOeK29XM1aboGji26+QEortiFST1hGZaUQOLhtEbqHErPpGW/aSz6allwK2qcptp0Q==}
     engines: {node: '>=12'}
 
-  p-retry@6.2.1:
-    resolution: {integrity: sha512-hEt02O4hUct5wtwg4H4KcWgDdm+l1bOaEy/hWzd8xtXB9BqxTWBBhb+2ImAtH4Cv4rPjV76xN3Zumqk3k3AhhQ==}
-    engines: {node: '>=16.17'}
+  p-retry@7.1.1:
+    resolution: {integrity: sha512-J5ApzjyRkkf601HpEeykoiCvzHQjWxPAHhyjFcEUP2SWq0+35NKh8TLhpLw+Dkq5TZBFvUM6UigdE9hIVYTl5w==}
+    engines: {node: '>=20'}
 
   p-timeout@6.1.4:
     resolution: {integrity: sha512-MyIV3ZA/PmyBN/ud8vV9XzwTrNtR4jFrObymZYnZqMmW0zA8Z17vnT0rBgFE/TlohB+YCHqXMgZzb3Csp49vqg==}
@@ -3591,6 +3592,10 @@ packages:
     resolution: {integrity: sha512-ARhCpm70fzdcvNQfPoy49IaanKkTlRWF2JMzqhcJbhSFRZv7nPTvZJdcY7301IPmvW+/p0RgIWnQDLJxifsQ7g==}
     engines: {node: '>=8'}
 
+  random-int@3.1.0:
+    resolution: {integrity: sha512-h8CRz8cpvzj0hC/iH/1Gapgcl2TQ6xtnCpyOI5WvWfXf/yrDx2DOU+tD9rX23j36IF11xg1KqB9W11Z18JPMdw==}
+    engines: {node: '>=12'}
+
   rc@1.2.8:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
     hasBin: true
@@ -3699,10 +3704,6 @@ packages:
   restore-cursor@5.1.0:
     resolution: {integrity: sha512-oMA2dcrw6u0YfxJQXm342bFKX/E4sG9rbTzO9ptUcR/e8A33cHuvStiYOwH7fszkZlZ1z/ta9AAoPk2F4qIOHA==}
     engines: {node: '>=18'}
-
-  retry@0.13.1:
-    resolution: {integrity: sha512-XQBQ3I8W1Cge0Seh+6gjj03LbmRFWuoszgK9ooCpwYIrhhoO80pfq4cUkU5DkknwfOfFteRwlZ56PYOGYyFWdg==}
-    engines: {node: '>= 4'}
 
   reusify@1.1.0:
     resolution: {integrity: sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw==}
@@ -4168,6 +4169,10 @@ packages:
   universalify@2.0.1:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
     engines: {node: '>= 10.0.0'}
+
+  unlimited-timeout@0.1.0:
+    resolution: {integrity: sha512-D4g+mxFeQGQHzCfnvij+R35ukJ0658Zzudw7j16p4tBBbNasKkKM4SocYxqhwT5xA7a9JYWDzKkEFyMlRi5sng==}
+    engines: {node: '>=20'}
 
   unrs-resolver@1.11.1:
     resolution: {integrity: sha512-bSjt9pjaEBnNiGgc9rUiHGKv5l4/TGzDmYw3RhnkJGtLhbnnA/5qJj7x3dNDCRx/PJxu774LlH8lCOlB4hEfKg==}
@@ -5409,8 +5414,6 @@ snapshots:
 
   '@types/parse-json@4.0.2': {}
 
-  '@types/retry@0.12.2': {}
-
   '@types/tmp@0.2.6': {}
 
   '@typescript-eslint/eslint-plugin@8.49.0(@typescript-eslint/parser@8.49.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)':
@@ -6260,6 +6263,11 @@ snapshots:
   defu@6.1.4: {}
 
   delay@6.0.0: {}
+
+  delay@7.0.0:
+    dependencies:
+      random-int: 3.1.0
+      unlimited-timeout: 0.1.0
 
   depcheck-detector-bin-name@1.0.2:
     dependencies:
@@ -7742,11 +7750,9 @@ snapshots:
 
   p-reduce@3.0.0: {}
 
-  p-retry@6.2.1:
+  p-retry@7.1.1:
     dependencies:
-      '@types/retry': 0.12.2
       is-network-error: 1.3.0
-      retry: 0.13.1
 
   p-timeout@6.1.4: {}
 
@@ -8055,6 +8061,8 @@ snapshots:
 
   quick-lru@4.0.1: {}
 
+  random-int@3.1.0: {}
+
   rc@1.2.8:
     dependencies:
       deep-extend: 0.6.0
@@ -8180,8 +8188,6 @@ snapshots:
     dependencies:
       onetime: 7.0.0
       signal-exit: 4.1.0
-
-  retry@0.13.1: {}
 
   reusify@1.1.0: {}
 
@@ -8615,6 +8621,8 @@ snapshots:
   universal-user-agent@7.0.3: {}
 
   universalify@2.0.1: {}
+
+  unlimited-timeout@0.1.0: {}
 
   unrs-resolver@1.11.1:
     dependencies:
