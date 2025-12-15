@@ -51,7 +51,7 @@
     "p-retry": "^6.2.1"
   },
   "devDependencies": {
-    "@dword-design/base": "^15.3.3",
+    "@dword-design/base": "^16.0.0",
     "@playwright/test": "^1.54.2",
     "@types/tmp": "^0.2.6",
     "delay": "^6.0.0",
