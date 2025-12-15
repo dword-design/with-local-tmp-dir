@@ -1,3 +1,10 @@
+## [7.0.1](https://github.com/dword-design/with-local-tmp-dir/compare/v7.0.0...v7.0.1) (2025-12-15)
+
+
+### Bug Fixes
+
+* update pnpm to v10.25.0 ([#138](https://github.com/dword-design/with-local-tmp-dir/issues/138)) ([0db60d2](https://github.com/dword-design/with-local-tmp-dir/commit/0db60d2444ac06af786a12dd212b3f8d4e9687a0))
+
 # [7.0.0](https://github.com/dword-design/with-local-tmp-dir/compare/v6.0.0...v7.0.0) (2025-12-15)
 
 
