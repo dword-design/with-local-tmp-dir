@@ -46,7 +46,7 @@
     "verify": "base verify"
   },
   "dependencies": {
-    "@dword-design/chdir": "^4.0.0",
+    "@dword-design/chdir": "^5.0.0",
     "@types/fs-extra": "^11.0.4",
     "p-retry": "^7.1.1"
   },
