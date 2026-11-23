@@ -57,7 +57,7 @@
     "delay": "^7.0.0",
     "fs-extra": "^11.3.2"
   },
-  "packageManager": "pnpm@10.25.0+sha512.5e82639027af37cf832061bcc6d639c219634488e0f2baebe785028a793de7b525ffcd3f7ff574f5e9860654e098fe852ba8ac5dd5cefe1767d23a020a92f501",
+  "packageManager": "pnpm@12.23.0+sha512.02da94ffaf133f46074322afe552f90d40b5f71ae259aefbccdacc5085b1d617e98d65e0131f5748b9b67445978ee5055d7d59a473f1eef0d504854fefcd5975",
   "engines": {
     "node": ">=22"
   },
